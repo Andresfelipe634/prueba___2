@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es"><head>
+<!-- Vista: Reporte comercial. Consolidado de ingresos, egresos, costos veterinarios y margen operativo en TERRABOVINO. -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Reporte comercial en TERRABOVINO, consolidado de ingresos por leche y ganado, egresos en insumos, costos veterinarios y balance operativo.">
+<title>Reporte comercial | TERRABOVINO</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css"></head>
+<body><div class="app-mobile-menu"><details><summary>TERRABOVINO · Abrir navegación</summary><nav aria-label="Navegación móvil"><details ><summary>▦ &nbsp;Paneles</summary><a href="../paneles/dashboard-ganadero.html" >Dashboard del ganadero</a><a href="../paneles/dashboard-veterinario.html" >Dashboard del veterinario</a><a href="../paneles/dashboard-trabajador.html" >Dashboard del trabajador</a><a href="../paneles/dashboard-administrador.html" >Dashboard del administrador</a></details><details ><summary>◈ &nbsp;Aprender</summary><a href="../aprender/introduccion-ganaderia.html" >Introducción a la ganadería</a><a href="../aprender/razas-bovinas.html" >Razas bovinas</a><a href="../aprender/enrazamiento.html" >Enrazamiento</a><a href="../aprender/alimentacion-bovina.html" >Alimentación bovina</a><a href="../aprender/insumos-ganaderos.html" >Insumos ganaderos</a><a href="../aprender/vitaminas.html" >Vitaminas</a><a href="../aprender/enfermedades.html" >Enfermedades</a><a href="../aprender/manejo-ganadero.html" >Manejo ganadero</a></details><details ><summary>♧ &nbsp;Mi ganado</summary><a href="../mi-ganado/listado-bovinos.html" >Listado de bovinos</a><a href="../mi-ganado/registrar-bovino.html" >Registrar bovino</a><a href="../mi-ganado/ficha-individual.html" >Ficha individual</a><a href="../mi-ganado/editar-bovino.html" >Editar información del bovino</a><a href="../mi-ganado/registro-pesajes.html" >Registro de pesajes</a><a href="../mi-ganado/historial-pesajes.html" >Historial de pesajes</a><a href="../mi-ganado/seguimiento-crecimiento.html" >Seguimiento del crecimiento</a><a href="../mi-ganado/gestion-lotes.html" >Gestión de lotes</a><a href="../mi-ganado/movimientos-ganado.html" >Movimientos del ganado</a><a href="../mi-ganado/historial-movimientos.html" >Historial de movimientos</a><a href="../mi-ganado/registro-mortalidad.html" >Registro de mortalidad</a><a href="../mi-ganado/registro-destete.html" >Registro de destete</a></details><details ><summary>▤ &nbsp;Potreros</summary><a href="../potreros/listado-potreros.html" >Listado de potreros</a><a href="../potreros/registrar-potrero.html" >Registrar potrero</a><a href="../potreros/detalles-potrero.html" >Detalles del potrero</a><a href="../potreros/editar-potrero.html" >Editar potrero</a><a href="../potreros/ocupacion-potreros.html" >Ocupación de potreros</a><a href="../potreros/rotacion-potreros.html" >Rotación de potreros</a><a href="../potreros/historial-rotaciones.html" >Historial de rotaciones</a></details><details ><summary>✚ &nbsp;Sanidad</summary><a href="../sanidad/control-sanitario.html" >Control sanitario</a><a href="../sanidad/registro-enfermedades.html" >Registro de enfermedades</a><a href="../sanidad/vacunacion.html" >Vacunación</a><a href="../sanidad/tratamientos-medicos.html" >Tratamientos médicos</a><a href="../sanidad/aplicacion-vitaminas.html" >Aplicación de vitaminas</a><a href="../sanidad/desparasitaciones.html" >Desparasitaciones</a><a href="../sanidad/controles-veterinarios.html" >Controles veterinarios</a><a href="../sanidad/analisis-laboratorio.html" >Análisis de laboratorio</a><a href="../sanidad/cuarentena.html" >Cuarentena</a><a href="../sanidad/certificados-sanitarios.html" >Certificados sanitarios</a><a href="../sanidad/historial-sanitario.html" >Historial sanitario</a><a href="../sanidad/estadisticas-sanitarias.html" >Estadísticas sanitarias</a></details><details ><summary>◉ &nbsp;Alimentación e insumos</summary><a href="../alimentacion-insumos/gestion-alimentacion.html" >Gestión de alimentación</a><a href="../alimentacion-insumos/registro-alimentacion.html" >Registro de alimentación</a><a href="../alimentacion-insumos/alimentacion-lote.html" >Alimentación por lote</a><a href="../alimentacion-insumos/consumo-agua.html" >Consumo de agua</a><a href="../alimentacion-insumos/listado-insumos.html" >Listado de insumos</a><a href="../alimentacion-insumos/registrar-insumo.html" >Registrar insumo</a><a href="../alimentacion-insumos/inventario.html" >Inventario</a><a href="../alimentacion-insumos/medicamentos.html" >Medicamentos</a><a href="../alimentacion-insumos/vitaminas.html" >Vitaminas</a><a href="../alimentacion-insumos/alimentos.html" >Alimentos</a><a href="../alimentacion-insumos/alertas-inventario.html" >Alertas de inventario</a><a href="../alimentacion-insumos/control-vencimientos.html" >Control de vencimientos</a></details><details ><summary>▥ &nbsp;Producción</summary><a href="../produccion/produccion-leche.html" >Producción de leche</a><a href="../produccion/registro-diario-leche.html" >Registro diario de leche</a><a href="../produccion/produccion-carne.html" >Producción de carne</a><a href="../produccion/registro-otros-productos.html" >Registro de otros productos</a><a href="../produccion/historial-produccion.html" >Historial de producción</a><a href="../produccion/estadisticas-produccion.html" >Estadísticas de producción</a></details><details ><summary>♡ &nbsp;Reproducción</summary><a href="../reproduccion/control-reproductivo.html" >Control reproductivo</a><a href="../reproduccion/registro-montas.html" >Registro de montas</a><a href="../reproduccion/inseminaciones.html" >Inseminaciones</a><a href="../reproduccion/gestaciones.html" >Gestaciones</a><a href="../reproduccion/control-fertilidad.html" >Control de fertilidad</a><a href="../reproduccion/registro-partos.html" >Registro de partos</a><a href="../reproduccion/registro-nacimientos.html" >Registro de nacimientos</a><a href="../reproduccion/historial-reproductivo.html" >Historial reproductivo</a><a href="../reproduccion/calendario-reproductivo.html" >Calendario reproductivo</a></details><details ><summary>◇ &nbsp;Servicios ganaderos</summary><a href="../servicios/catalogo-servicios.html" >Catálogo de servicios</a><a href="../servicios/prestamo-reproductores.html" >Préstamo de reproductores</a><a href="../servicios/solicitar-servicio.html" >Solicitar servicio</a><a href="../servicios/mis-servicios.html" >Mis servicios</a><a href="../servicios/historial-servicios.html" >Historial de servicios</a></details><details ><summary>$ &nbsp;Comercial</summary><a href="../comercial/compras-ganado.html" >Compras de ganado</a><a href="../comercial/ventas-ganado.html" >Ventas de ganado</a><a href="../comercial/compras-insumos.html" >Compras de insumos</a><a href="../comercial/ventas-productos.html" >Ventas de productos</a><a href="../comercial/gestion-clientes.html" >Gestión de clientes</a><a href="../comercial/gestion-proveedores.html" >Gestión de proveedores</a><a href="../comercial/registro-ingresos.html" >Registro de ingresos</a><a href="../comercial/registro-gastos.html" >Registro de gastos</a><a href="../comercial/costos-veterinarios.html" >Costos veterinarios</a><a href="../comercial/historial-transacciones.html" >Historial de transacciones</a></details><details ><summary>▦ &nbsp;Calendario ganadero</summary><a href="../calendario/calendario-general.html" >Calendario general</a><a href="../calendario/programar-actividades.html" >Programar actividades</a><a href="../calendario/programar-vacunaciones.html" >Programar vacunaciones</a><a href="../calendario/programar-controles-veterinarios.html" >Programar controles veterinarios</a><a href="../calendario/programar-inseminaciones.html" >Programar inseminaciones</a><a href="../calendario/programar-partos.html" >Programar partos</a><a href="../calendario/recordatorios-actividades.html" >Recordatorios de actividades</a></details><details ><summary>☑ &nbsp;Actividades de la finca</summary><a href="../actividades/listado-actividades.html" >Listado de actividades</a><a href="../actividades/registrar-actividad.html" >Registrar actividad</a><a href="../actividades/asignar-actividades.html" >Asignar actividades a trabajadores</a><a href="../actividades/actividades-pendientes.html" >Actividades pendientes</a><a href="../actividades/actividades-completadas.html" >Actividades completadas</a><a href="../actividades/historial-actividades.html" >Historial de actividades</a></details><details open><summary>▤ &nbsp;Reportes</summary><a href="../reportes/reporte-general-ganado.html" >Reporte general de ganado</a><a href="../reportes/reporte-crecimiento.html" >Reporte de crecimiento</a><a href="../reportes/reporte-produccion.html" >Reporte de producción</a><a href="../reportes/reporte-sanitario.html" >Reporte sanitario</a><a href="../reportes/reporte-reproductivo.html" >Reporte reproductivo</a><a href="../reportes/reporte-potreros.html" >Reporte de potreros</a><a href="../reportes/reporte-comercial.html" aria-current="page">Reporte comercial</a><a href="../reportes/estadisticas-generales.html" >Estadísticas generales</a></details><details ><summary>⚙ &nbsp;Administración</summary><a href="../administracion/gestion-usuarios.html" >Gestión de usuarios</a><a href="../administracion/registrar-usuario.html" >Registrar usuario</a><a href="../administracion/editar-usuario.html" >Editar usuario</a><a href="../administracion/gestion-roles.html" >Gestión de roles</a><a href="../administracion/gestion-permisos.html" >Gestión de permisos</a><a href="../administracion/asignacion-permisos.html" >Asignación de permisos</a><a href="../administracion/gestion-fincas.html" >Gestión de fincas</a><a href="../administracion/registro-auditoria.html" >Registro de auditoría</a><a href="../administracion/configuracion-sistema.html" >Configuración del sistema</a></details><details ><summary>☷ &nbsp;Complementarios</summary><a href="../complementarios/centro-notificaciones.html" >Centro de notificaciones</a><a href="../complementarios/gestion-documentos.html" >Gestión de documentos</a><a href="../complementarios/maquinaria-equipos.html" >Maquinaria y equipos</a><a href="../complementarios/mantenimiento-equipos.html" >Mantenimiento de equipos</a><a href="../complementarios/condiciones-climaticas.html" >Condiciones climáticas</a><a href="../complementarios/copias-seguridad.html" >Copias de seguridad</a><a href="../complementarios/sesiones-activas.html" >Gestión de sesiones activas</a><a href="../complementarios/perfil-usuario.html" >Perfil de usuario</a><a href="../complementarios/editar-perfil.html" >Editar perfil</a><a href="../complementarios/cambiar-contrasena.html" >Cambiar contraseña</a></details></nav></details></div>
+<div class="app-layout"><aside class="app-sidebar"><a href="../PagPrincipal.html" class="navbar-brand text-white d-block mb-3"><span class="brand-mark">T</span>TERRABOVINO</a><nav aria-label="Menú lateral"><details ><summary>▦ &nbsp;Paneles</summary><a href="../paneles/dashboard-ganadero.html" >Dashboard del ganadero</a><a href="../paneles/dashboard-veterinario.html" >Dashboard del veterinario</a><a href="../paneles/dashboard-trabajador.html" >Dashboard del trabajador</a><a href="../paneles/dashboard-administrador.html" >Dashboard del administrador</a></details><details ><summary>◈ &nbsp;Aprender</summary><a href="../aprender/introduccion-ganaderia.html" >Introducción a la ganadería</a><a href="../aprender/razas-bovinas.html" >Razas bovinas</a><a href="../aprender/enrazamiento.html" >Enrazamiento</a><a href="../aprender/alimentacion-bovina.html" >Alimentación bovina</a><a href="../aprender/insumos-ganaderos.html" >Insumos ganaderos</a><a href="../aprender/vitaminas.html" >Vitaminas</a><a href="../aprender/enfermedades.html" >Enfermedades</a><a href="../aprender/manejo-ganadero.html" >Manejo ganadero</a></details><details ><summary>♧ &nbsp;Mi ganado</summary><a href="../mi-ganado/listado-bovinos.html" >Listado de bovinos</a><a href="../mi-ganado/registrar-bovino.html" >Registrar bovino</a><a href="../mi-ganado/ficha-individual.html" >Ficha individual</a><a href="../mi-ganado/editar-bovino.html" >Editar información del bovino</a><a href="../mi-ganado/registro-pesajes.html" >Registro de pesajes</a><a href="../mi-ganado/historial-pesajes.html" >Historial de pesajes</a><a href="../mi-ganado/seguimiento-crecimiento.html" >Seguimiento del crecimiento</a><a href="../mi-ganado/gestion-lotes.html" >Gestión de lotes</a><a href="../mi-ganado/movimientos-ganado.html" >Movimientos del ganado</a><a href="../mi-ganado/historial-movimientos.html" >Historial de movimientos</a><a href="../mi-ganado/registro-mortalidad.html" >Registro de mortalidad</a><a href="../mi-ganado/registro-destete.html" >Registro de destete</a></details><details ><summary>▤ &nbsp;Potreros</summary><a href="../potreros/listado-potreros.html" >Listado de potreros</a><a href="../potreros/registrar-potrero.html" >Registrar potrero</a><a href="../potreros/detalles-potrero.html" >Detalles del potrero</a><a href="../potreros/editar-potrero.html" >Editar potrero</a><a href="../potreros/ocupacion-potreros.html" >Ocupación de potreros</a><a href="../potreros/rotacion-potreros.html" >Rotación de potreros</a><a href="../potreros/historial-rotaciones.html" >Historial de rotaciones</a></details><details ><summary>✚ &nbsp;Sanidad</summary><a href="../sanidad/control-sanitario.html" >Control sanitario</a><a href="../sanidad/registro-enfermedades.html" >Registro de enfermedades</a><a href="../sanidad/vacunacion.html" >Vacunación</a><a href="../sanidad/tratamientos-medicos.html" >Tratamientos médicos</a><a href="../sanidad/aplicacion-vitaminas.html" >Aplicación de vitaminas</a><a href="../sanidad/desparasitaciones.html" >Desparasitaciones</a><a href="../sanidad/controles-veterinarios.html" >Controles veterinarios</a><a href="../sanidad/analisis-laboratorio.html" >Análisis de laboratorio</a><a href="../sanidad/cuarentena.html" >Cuarentena</a><a href="../sanidad/certificados-sanitarios.html" >Certificados sanitarios</a><a href="../sanidad/historial-sanitario.html" >Historial sanitario</a><a href="../sanidad/estadisticas-sanitarias.html" >Estadísticas sanitarias</a></details><details ><summary>◉ &nbsp;Alimentación e insumos</summary><a href="../alimentacion-insumos/gestion-alimentacion.html" >Gestión de alimentación</a><a href="../alimentacion-insumos/registro-alimentacion.html" >Registro de alimentación</a><a href="../alimentacion-insumos/alimentacion-lote.html" >Alimentación por lote</a><a href="../alimentacion-insumos/consumo-agua.html" >Consumo de agua</a><a href="../alimentacion-insumos/listado-insumos.html" >Listado de insumos</a><a href="../alimentacion-insumos/registrar-insumo.html" >Registrar insumo</a><a href="../alimentacion-insumos/inventario.html" >Inventario</a><a href="../alimentacion-insumos/medicamentos.html" >Medicamentos</a><a href="../alimentacion-insumos/vitaminas.html" >Vitaminas</a><a href="../alimentacion-insumos/alimentos.html" >Alimentos</a><a href="../alimentacion-insumos/alertas-inventario.html" >Alertas de inventario</a><a href="../alimentacion-insumos/control-vencimientos.html" >Control de vencimientos</a></details><details ><summary>▥ &nbsp;Producción</summary><a href="../produccion/produccion-leche.html" >Producción de leche</a><a href="../produccion/registro-diario-leche.html" >Registro diario de leche</a><a href="../produccion/produccion-carne.html" >Producción de carne</a><a href="../produccion/registro-otros-productos.html" >Registro de otros productos</a><a href="../produccion/historial-produccion.html" >Historial de producción</a><a href="../produccion/estadisticas-produccion.html" >Estadísticas de producción</a></details><details ><summary>♡ &nbsp;Reproducción</summary><a href="../reproduccion/control-reproductivo.html" >Control reproductivo</a><a href="../reproduccion/registro-montas.html" >Registro de montas</a><a href="../reproduccion/inseminaciones.html" >Inseminaciones</a><a href="../reproduccion/gestaciones.html" >Gestaciones</a><a href="../reproduccion/control-fertilidad.html" >Control de fertilidad</a><a href="../reproduccion/registro-partos.html" >Registro de partos</a><a href="../reproduccion/registro-nacimientos.html" >Registro de nacimientos</a><a href="../reproduccion/historial-reproductivo.html" >Historial reproductivo</a><a href="../reproduccion/calendario-reproductivo.html" >Calendario reproductivo</a></details><details ><summary>◇ &nbsp;Servicios ganaderos</summary><a href="../servicios/catalogo-servicios.html" >Catálogo de servicios</a><a href="../servicios/prestamo-reproductores.html" >Préstamo de reproductores</a><a href="../servicios/solicitar-servicio.html" >Solicitar servicio</a><a href="../servicios/mis-servicios.html" >Mis servicios</a><a href="../servicios/historial-servicios.html" >Historial de servicios</a></details><details ><summary>$ &nbsp;Comercial</summary><a href="../comercial/compras-ganado.html" >Compras de ganado</a><a href="../comercial/ventas-ganado.html" >Ventas de ganado</a><a href="../comercial/compras-insumos.html" >Compras de insumos</a><a href="../comercial/ventas-productos.html" >Ventas de productos</a><a href="../comercial/gestion-clientes.html" >Gestión de clientes</a><a href="../comercial/gestion-proveedores.html" >Gestión de proveedores</a><a href="../comercial/registro-ingresos.html" >Registro de ingresos</a><a href="../comercial/registro-gastos.html" >Registro de gastos</a><a href="../comercial/costos-veterinarios.html" >Costos veterinarios</a><a href="../comercial/historial-transacciones.html" >Historial de transacciones</a></details><details ><summary>▦ &nbsp;Calendario ganadero</summary><a href="../calendario/calendario-general.html" >Calendario general</a><a href="../calendario/programar-actividades.html" >Programar actividades</a><a href="../calendario/programar-vacunaciones.html" >Programar vacunaciones</a><a href="../calendario/programar-controles-veterinarios.html" >Programar controles veterinarios</a><a href="../calendario/programar-inseminaciones.html" >Programar inseminaciones</a><a href="../calendario/programar-partos.html" >Programar partos</a><a href="../calendario/recordatorios-actividades.html" >Recordatorios de actividades</a></details><details ><summary>☑ &nbsp;Actividades de la finca</summary><a href="../actividades/listado-actividades.html" >Listado de actividades</a><a href="../actividades/registrar-actividad.html" >Registrar actividad</a><a href="../actividades/asignar-actividades.html" >Asignar actividades a trabajadores</a><a href="../actividades/actividades-pendientes.html" >Actividades pendientes</a><a href="../actividades/actividades-completadas.html" >Actividades completadas</a><a href="../actividades/historial-actividades.html" >Historial de actividades</a></details><details open><summary>▤ &nbsp;Reportes</summary><a href="../reportes/reporte-general-ganado.html" >Reporte general de ganado</a><a href="../reportes/reporte-crecimiento.html" >Reporte de crecimiento</a><a href="../reportes/reporte-produccion.html" >Reporte de producción</a><a href="../reportes/reporte-sanitario.html" >Reporte sanitario</a><a href="../reportes/reporte-reproductivo.html" >Reporte reproductivo</a><a href="../reportes/reporte-potreros.html" >Reporte de potreros</a><a href="../reportes/reporte-comercial.html" aria-current="page">Reporte comercial</a><a href="../reportes/estadisticas-generales.html" >Estadísticas generales</a></details><details ><summary>⚙ &nbsp;Administración</summary><a href="../administracion/gestion-usuarios.html" >Gestión de usuarios</a><a href="../administracion/registrar-usuario.html" >Registrar usuario</a><a href="../administracion/editar-usuario.html" >Editar usuario</a><a href="../administracion/gestion-roles.html" >Gestión de roles</a><a href="../administracion/gestion-permisos.html" >Gestión de permisos</a><a href="../administracion/asignacion-permisos.html" >Asignación de permisos</a><a href="../administracion/gestion-fincas.html" >Gestión de fincas</a><a href="../administracion/registro-auditoria.html" >Registro de auditoría</a><a href="../administracion/configuracion-sistema.html" >Configuración del sistema</a></details><details ><summary>☷ &nbsp;Complementarios</summary><a href="../complementarios/centro-notificaciones.html" >Centro de notificaciones</a><a href="../complementarios/gestion-documentos.html" >Gestión de documentos</a><a href="../complementarios/maquinaria-equipos.html" >Maquinaria y equipos</a><a href="../complementarios/mantenimiento-equipos.html" >Mantenimiento de equipos</a><a href="../complementarios/condiciones-climaticas.html" >Condiciones climáticas</a><a href="../complementarios/copias-seguridad.html" >Copias de seguridad</a><a href="../complementarios/sesiones-activas.html" >Gestión de sesiones activas</a><a href="../complementarios/perfil-usuario.html" >Perfil de usuario</a><a href="../complementarios/editar-perfil.html" >Editar perfil</a><a href="../complementarios/cambiar-contrasena.html" >Cambiar contraseña</a></details></nav></aside>
+<div class="app-main"><header class="app-topbar"><div><span class="small muted">TERRABOVINO / Reportes</span><div class="fw-semibold">Finca La Esperanza <span class="small muted fw-normal">· Reporte comercial</span></div></div><a class="btn btn-outline-success btn-sm" href="../login.html">Salir</a></header>
+<main class="app-content">
+<div class="app-page-heading">
+  <div>
+    <p class="text-brand fw-semibold mb-1">REPORTES</p>
+    <h1 class="h2 fw-bold mb-1">Reporte comercial</h1>
+    <p class="muted mb-0">Consolidado de ingresos por ventas de leche, carne y derivados, egresos operativos, costos veterinarios y margen neto.</p>
+  </div>
+  <div class="d-flex gap-2 flex-wrap">
+    <a class="btn btn-outline-success" href="../comercial/historial-transacciones.html">Historial de transacciones</a>
+    <a class="btn btn-outline-secondary" href="../comercial/registro-ingresos.html">Registrar ingreso</a>
+  </div>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-12 col-sm-6 col-xl-4">
+    <div class="app-card">
+      <div class="muted small">Ingresos acumulados (noviembre)</div>
+      <div class="app-kpi">$ 18.450.000</div>
+      <span class="small text-brand">Leche, ganado en pie y derivados lácteos</span>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-xl-4">
+    <div class="app-card">
+      <div class="muted small">Egresos y costos operativos</div>
+      <div class="app-kpi">$ 9.620.000</div>
+      <span class="small text-brand">Alimentos, insumos, sanidad y nómina campo</span>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-xl-4">
+    <div class="app-card">
+      <div class="muted small">Balance operativo neto</div>
+      <div class="app-kpi">$ 8.830.000</div>
+      <span class="small text-brand">Margen neto parcial del mes: 47,9%</span>
+    </div>
+  </div>
+</div>
+
+<section class="app-card mb-4">
+  <h2 class="h5 fw-bold mb-3">Configurar reporte comercial</h2>
+  <form action="#" method="get">
+    <div class="row g-3">
+      <div class="col-md-3">
+        <label class="form-label" for="rco-periodo">Periodo contable</label>
+        <select id="rco-periodo" class="form-select">
+          <option selected>Noviembre 2026 (Parcial)</option>
+          <option>Octubre 2026 (Cerrado)</option>
+          <option>Trimestre Sep – Nov 2026</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label" for="rco-rubro">Rubro financiero</label>
+        <select id="rco-rubro" class="form-select">
+          <option selected>Todos los ingresos y egresos</option>
+          <option>Ventas de leche y derivados</option>
+          <option>Compras y ventas de ganado</option>
+          <option>Insumos, alimentos y sanidad</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label" for="rco-vista">Agrupación</label>
+        <select id="rco-vista" class="form-select">
+          <option selected>Por línea y concepto</option>
+          <option>Por cliente o proveedor</option>
+          <option>Flujo cronológico de caja</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label" for="rco-salida">Formato de salida</label>
+        <select id="rco-salida" class="form-select">
+          <option selected>Tabla consolidada en pantalla</option>
+          <option>Informe financiero PDF (próximamente)</option>
+          <option>Libro contable CSV (próximamente)</option>
+        </select>
+      </div>
+    </div>
+    <div class="d-flex gap-2 mt-4 flex-wrap">
+      <button class="btn btn-success" type="button">Generar reporte comercial (demostración)</button>
+      <a class="btn btn-outline-secondary" href="../reportes/estadisticas-generales.html">Siguiente: estadísticas generales</a>
+    </div>
+    <p class="app-field-note mt-3 mb-0">Reporte visual de demostración: aún no genera archivos descargables ni consulta en base de datos.</p>
+  </form>
+</section>
+
+<section class="app-card">
+  <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap mb-3">
+    <h2 class="h5 mb-0">Resumen de rubros comerciales y costos (Noviembre 2026)</h2>
+    <span class="app-pill">Datos ilustrativos</span>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover app-table mb-0">
+      <thead>
+        <tr>
+          <th scope="col">Concepto / Rubro</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Contraparte principal</th>
+          <th scope="col">Monto (COP)</th>
+          <th scope="col">Participación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Venta de leche cruda (4.960 L)</td>
+          <td>Ingreso</td>
+          <td>Acopio Lácteos Boyacá</td>
+          <td>$ 10.416.000</td>
+          <td>56,5% ingresos</td>
+        </tr>
+        <tr>
+          <td>Venta de ganado en pie (2 novillos)</td>
+          <td>Ingreso</td>
+          <td>Subasta Ganadera Sogamoso</td>
+          <td>$ 6.390.000</td>
+          <td>34,6% ingresos</td>
+        </tr>
+        <tr>
+          <td>Venta de queso campesino (85 kg)</td>
+          <td>Ingreso</td>
+          <td>Mercado local Tasco</td>
+          <td>$ 1.644.000</td>
+          <td>8,9% ingresos</td>
+        </tr>
+        <tr>
+          <td>Suplementación, sales y concentrado</td>
+          <td>Egreso</td>
+          <td>Agroinsumos del Norte</td>
+          <td>$ 4.180.000</td>
+          <td>43,5% egresos</td>
+        </tr>
+        <tr>
+          <td>Sanidad, fármacos y control veterinario</td>
+          <td>Egreso</td>
+          <td>Clínica Veterinaria Sogamoso</td>
+          <td>$ 1.840.000</td>
+          <td>19,1% egresos</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</main><footer class="px-4 py-3 border-top small muted">TERRABOVINO · Maqueta académica · 2026</footer></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/app.js"></script>
+</body></html>

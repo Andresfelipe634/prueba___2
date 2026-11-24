@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registrar insumo | TERRABOVINO</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+body{margin:0;background:#f4f6f3;color:#172b22;font-family:Arial,sans-serif}.app-layout{display:flex;min-height:100vh}.app-sidebar{width:260px;flex-shrink:0;background:#172b22;color:white;padding:20px;overflow-y:auto}.app-sidebar a,.app-sidebar summary{display:block;color:#c1d8cc;text-decoration:none;padding:10px;border-radius:7px;cursor:pointer}.app-sidebar a:hover,.app-sidebar summary:hover,.active{background:#285640;color:white}.app-sidebar details a{padding-left:25px;font-size:14px}.brand{font-size:21px;font-weight:bold;color:white;margin-bottom:25px}.brand span{background:#20815b;padding:8px 12px;border-radius:8px;margin-right:7px}.app-main{flex:1;min-width:0}.app-topbar{background:white;padding:20px 28px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.app-content{padding:30px}.app-card{background:white;border:1px solid #e0e7e2;border-radius:13px;padding:22px;height:100%;box-shadow:0 3px 12px #00000008}.muted{color:#718078}.green{color:#087b56}.app-pill{background:#e6f3eb;color:#176b48;border-radius:20px;padding:5px 10px;font-size:12px}.app-mobile{display:none}@media(max-width:750px){.app-layout{display:block}.app-sidebar{display:none}.app-mobile{display:block;background:#172b22;padding:15px;color:white}.app-mobile a{display:block;color:#d1e4d9;padding:7px;text-decoration:none}.app-content{padding:16px}.app-topbar{padding:15px}}
+</style>
+</head>
+<body>
+<div class="app-mobile"><details><summary>TERRABOVINO · Menú</summary><a href="gestion-alimentacion.html">Gestión de alimentación</a><a href="registro-alimentacion.html">Registro de alimentación</a><a href="alimentacion-lote.html">Alimentación por lote</a><a href="listado-insumos.html">Listado de insumos</a><a href="registrar-insumo.html">Registrar insumo</a><a href="inventario.html">Inventario</a></details></div>
+<div class="app-layout">
+<aside class="app-sidebar"><div class="brand"><span>T</span>TERRABOVINO</div><a href="../PagPrincipal.html">⌂ Panel principal</a><details open><summary>◉ Alimentación e insumos</summary><a href="gestion-alimentacion.html">Gestión de alimentación</a><a href="registro-alimentacion.html">Registro de alimentación</a><a href="alimentacion-lote.html">Alimentación por lote</a><a href="consumo-agua.html">Consumo de agua</a><a href="listado-insumos.html">Listado de insumos</a><a class="active" href="registrar-insumo.html">Registrar insumo</a><a href="inventario.html">Inventario</a><a href="medicamentos.html">Medicamentos</a><a href="vitaminas.html">Vitaminas</a><a href="alimentos.html">Alimentos</a></details><a href="../sanidad/control-sanitario.html">✚ Sanidad</a><a href="../mi-ganado/listado-bovinos.html">♧ Mi ganado</a></aside>
+<div class="app-main">
+<header class="app-topbar"><div><small class="muted">TERRABOVINO / Alimentación e insumos</small><div><strong>Finca La Esperanza</strong> · Registrar insumo</div></div><a href="../login.html" class="btn btn-outline-success btn-sm">Salir</a></header>
+<main class="app-content">
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4"><div><p class="green fw-bold mb-1">ALIMENTACIÓN E INSUMOS</p><h1 class="fw-bold">Registrar insumo</h1><p class="muted">Alta de alimentos, medicamentos, vitaminas y suplementos con control de stock mínimo y vencimiento.</p></div><div><a href="listado-insumos.html" class="btn btn-outline-success">Ver listado</a> <a href="inventario.html" class="btn btn-outline-secondary">Ir a inventario</a></div></div>
+<section class="app-card mb-4">
+<h2 class="h5 fw-bold mb-3">Ficha del nuevo insumo</h2>
+<form id="form-insumo">
+<div class="row g-3">
+<div class="col-md-4"><label class="form-label" for="reg-ins-codigo">Código interno</label><input id="reg-ins-codigo" class="form-control" type="text" placeholder="Ej. INS-035" required></div>
+<div class="col-md-8"><label class="form-label" for="reg-ins-nombre">Nombre comercial o descripción</label><input id="reg-ins-nombre" class="form-control" type="text" placeholder="Ej. Concentrado Novillas Levante 16% PC" required></div>
+<div class="col-md-4"><label class="form-label" for="reg-ins-categoria">Categoría</label><select id="reg-ins-categoria" class="form-select" required><option value="">Seleccionar...</option><option>Alimentos y concentrados</option><option>Medicamentos veterinarios</option><option>Vitaminas y minerales</option><option>Bioseguridad y desinfección</option></select></div>
+<div class="col-md-4"><label class="form-label" for="reg-ins-unidad">Unidad de medida</label><select id="reg-ins-unidad" class="form-select"><option>Bulto (40 kg)</option><option>Kilogramo (kg)</option><option>Frasco (mL)</option><option>Dosis / Unidad</option><option>Galón / Litro</option></select></div>
+<div class="col-md-4"><label class="form-label" for="reg-ins-ubicacion">Ubicación en bodega</label><input id="reg-ins-ubicacion" class="form-control" type="text" placeholder="Ej. Bodega Principal · Estiba 2"></div>
+<div class="col-md-4"><label class="form-label" for="reg-ins-inicial">Stock inicial</label><input id="reg-ins-inicial" class="form-control" type="number" min="0" step="0.5" placeholder="Ej. 20" required></div>
+<div class="col-md-4"><label class="form-label" for="reg-ins-minimo">Stock mínimo de alerta</label><input id="reg-ins-minimo" class="form-control" type="number" min="0" step="0.5" placeholder="Ej. 5"></div>
+<div class="col-md-4"><label class="form-label" for="reg-ins-vencimiento">Fecha de vencimiento</label><input id="reg-ins-vencimiento" class="form-control" type="date"></div>
+<div class="col-md-6"><label class="form-label" for="reg-ins-lote">Lote de fabricación / Registro ICA</label><input id="reg-ins-lote" class="form-control" type="text" placeholder="Ej. LOT-2026-884 · ICA 9412-AL"></div>
+<div class="col-md-6"><label class="form-label" for="reg-ins-proveedor">Proveedor habitual</label><input id="reg-ins-proveedor" class="form-control" type="text" placeholder="Ej. Agropecuaria El Valle S.A.S."></div>
+</div>
+<div class="mt-4"><button class="btn btn-success" type="submit">Guardar insumo</button> <button class="btn btn-outline-secondary" type="reset">Limpiar</button> <a href="listado-insumos.html" class="btn btn-outline-secondary">Cancelar</a></div>
+<p class="muted small mt-3 mb-0">Demostración: el formulario no guarda en una base de datos.</p>
+</form>
+</section>
+<section class="app-card"><h2 class="h5 fw-bold mb-3">Últimos insumos incorporados</h2>
+<div class="table-responsive"><table class="table table-hover"><thead><tr><th>Código</th><th>Insumo</th><th>Categoría</th><th>Stock inicial</th><th>Vencimiento</th><th>Estado</th></tr></thead><tbody>
+<tr><td>INS-034</td><td>Sal Mineralizada 8% Fósforo</td><td>Vitaminas y minerales</td><td>15 bultos</td><td>18/08/2027</td><td><span class="app-pill">Registrado</span></td></tr>
+<tr><td>INS-033</td><td>Ivermectina 1% L.A. (Frasco 500 mL)</td><td>Medicamentos</td><td>4 frascos</td><td>10/04/2027</td><td><span class="app-pill">Registrado</span></td></tr>
+</tbody></table></div></section>
+</main><footer class="bg-white border-top p-3 small muted">TERRABOVINO · Maqueta académica · 2026</footer>
+</div></div>
+<script>
+document.getElementById('form-insumo').addEventListener('submit',function(e){
+e.preventDefault();
+alert('Formulario validado. Para guardar el insumo permanentemente debes conectar una base de datos.');
+});
+</script>
+</body></html>

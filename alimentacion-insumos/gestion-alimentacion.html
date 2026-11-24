@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestión de alimentación | TERRABOVINO</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+body{margin:0;background:#f4f6f3;color:#172b22;font-family:Arial,sans-serif}
+.app-layout{display:flex;min-height:100vh}
+.app-sidebar{width:260px;flex-shrink:0;background:#172b22;color:white;padding:20px;overflow-y:auto}
+.app-sidebar a,.app-sidebar summary{display:block;color:#c1d8cc;text-decoration:none;padding:10px;border-radius:7px;cursor:pointer}
+.app-sidebar a:hover,.app-sidebar summary:hover,.app-sidebar .active{background:#285640;color:white}
+.app-sidebar details a{padding-left:25px;font-size:14px}
+.brand{font-size:21px;font-weight:bold;color:white;margin-bottom:25px}
+.brand span{background:#20815b;padding:8px 12px;border-radius:8px;margin-right:7px}
+.app-main{flex:1;min-width:0}
+.app-topbar{background:white;padding:20px 28px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}
+.app-content{padding:30px}
+.app-card{background:white;border:1px solid #e0e7e2;border-radius:13px;padding:22px;height:100%;box-shadow:0 3px 12px #00000008}
+.app-kpi{font-size:32px;font-weight:bold;margin:7px 0}
+.muted{color:#718078}.green{color:#087b56}
+.app-pill{background:#e6f3eb;color:#176b48;border-radius:20px;padding:5px 10px;font-size:12px}
+.app-mobile{display:none}
+@media(max-width:750px){.app-layout{display:block}.app-sidebar{display:none}.app-mobile{display:block;background:#172b22;padding:15px;color:white}.app-mobile a{display:block;color:#d1e4d9;padding:7px;text-decoration:none}.app-content{padding:16px}.app-topbar{padding:15px}}
+</style>
+</head>
+<body>
+<div class="app-mobile"><details><summary>TERRABOVINO · Menú</summary>
+<a href="gestion-alimentacion.html">Gestión de alimentación</a>
+<a href="registro-alimentacion.html">Registro de alimentación</a>
+<a href="alimentacion-lote.html">Alimentación por lote</a>
+<a href="listado-insumos.html">Listado de insumos</a>
+<a href="registrar-insumo.html">Registrar insumo</a>
+<a href="inventario.html">Inventario</a>
+</details></div>
+<div class="app-layout">
+<aside class="app-sidebar">
+<div class="brand"><span>T</span>TERRABOVINO</div>
+<a href="../PagPrincipal.html">⌂ Panel principal</a>
+<details><summary>▦ Paneles</summary><a href="../paneles/dashboard-ganadero.html">Dashboard ganadero</a></details>
+<details><summary>♧ Mi ganado</summary><a href="../mi-ganado/listado-bovinos.html">Listado de bovinos</a></details>
+<details><summary>✚ Sanidad</summary><a href="../sanidad/control-sanitario.html">Control sanitario</a></details>
+<details open><summary>◉ Alimentación e insumos</summary>
+<a class="active" href="gestion-alimentacion.html">Gestión de alimentación</a>
+<a href="registro-alimentacion.html">Registro de alimentación</a>
+<a href="alimentacion-lote.html">Alimentación por lote</a>
+<a href="consumo-agua.html">Consumo de agua</a>
+<a href="listado-insumos.html">Listado de insumos</a>
+<a href="registrar-insumo.html">Registrar insumo</a>
+<a href="inventario.html">Inventario</a>
+<a href="medicamentos.html">Medicamentos</a>
+<a href="vitaminas.html">Vitaminas</a>
+<a href="alimentos.html">Alimentos</a>
+<a href="alertas-inventario.html">Alertas de inventario</a>
+<a href="control-vencimientos.html">Control de vencimientos</a>
+</details>
+<details><summary>▥ Producción</summary><a href="../produccion/produccion-leche.html">Producción de leche</a></details>
+<details><summary>♡ Reproducción</summary><a href="../reproduccion/control-reproductivo.html">Control reproductivo</a></details>
+<details><summary>▤ Reportes</summary><a href="../reportes/reporte-general-ganado.html">Reportes</a></details>
+</aside>
+<div class="app-main">
+<header class="app-topbar"><div><small class="muted">TERRABOVINO / Alimentación e insumos</small><div><strong>Finca La Esperanza</strong> · Gestión de alimentación</div></div><a href="../login.html" class="btn btn-outline-success btn-sm">Salir</a></header>
+<main class="app-content">
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+<div><p class="green fw-bold mb-1">ALIMENTACIÓN E INSUMOS</p><h1 class="fw-bold">Gestión de alimentación</h1><p class="muted">Planificación de raciones, suplementación por lote, consumo de agua y disponibilidad de insumos.</p></div>
+<div><a href="registro-alimentacion.html" class="btn btn-success">Registrar ración</a> <a href="inventario.html" class="btn btn-outline-success">Ver inventario</a></div>
+</div>
+<div class="row g-3 mb-4">
+<div class="col-md-4"><div class="app-card"><div class="muted">Consumo diario estimado</div><div class="app-kpi">485 kg</div><span class="green">Forraje, ensilaje y concentrado</span></div></div>
+<div class="col-md-4"><div class="app-card"><div class="muted">Lotes con suplementación</div><div class="app-kpi">4</div><span class="green">Ordeño, levante, ceba y cría</span></div></div>
+<div class="col-md-4"><div class="app-card"><div class="muted">Alertas de stock y vencimiento</div><div class="app-kpi">3</div><span class="green">Revisar minerales y concentrado</span></div></div>
+</div>
+<section class="app-card mb-4">
+<h2 class="h5 fw-bold mb-3">Accesos operativos del módulo</h2>
+<div class="row g-3">
+<div class="col-md-4"><div class="border rounded-3 p-3 h-100"><h3 class="h6">Registro y dietas</h3><p class="muted">Anota raciones diarias y ajustes nutricionales.</p><a href="registro-alimentacion.html" class="btn btn-sm btn-outline-success">Registro diario</a> <a href="alimentacion-lote.html" class="btn btn-sm btn-outline-secondary">Por lote</a></div></div>
+<div class="col-md-4"><div class="border rounded-3 p-3 h-100"><h3 class="h6">Agua e hidratación</h3><p class="muted">Monitorea litros consumidos y calidad del agua.</p><a href="consumo-agua.html" class="btn btn-sm btn-outline-success">Consumo de agua</a></div></div>
+<div class="col-md-4"><div class="border rounded-3 p-3 h-100"><h3 class="h6">Bodega y control</h3><p class="muted">Consulta existencias, mínimos y vencimientos.</p><a href="inventario.html" class="btn btn-sm btn-outline-success">Inventario</a> <a href="alertas-inventario.html" class="btn btn-sm btn-outline-secondary">Alertas</a></div></div>
+</div>
+</section>
+<section class="app-card">
+<h2 class="h5 fw-bold mb-3">Planes de alimentación activos</h2>
+<div class="table-responsive"><table class="table table-hover">
+<thead><tr><th>Lote / Grupo</th><th>Base forrajera</th><th>Suplemento</th><th>Frecuencia</th><th>Estado</th></tr></thead>
+<tbody>
+<tr><td>Lote Ordeño · Vacas en producción</td><td>Kikuyo + Ensilaje de maíz</td><td>Concentrado 18% PC + Sal mineralizada</td><td>2 veces al día</td><td><span class="app-pill">Activo</span></td></tr>
+<tr><td>Lote Levante · Novillas y machos</td><td>Ryegrass + Kikuyo</td><td>Suplemento proteico + Sal mineral</td><td>1 vez al día</td><td><span class="app-pill">Activo</span></td></tr>
+<tr><td>Lote Ceba · Finalización</td><td>Corte y acarreo + Ensilaje</td><td>Mezcla energética + Melaza</td><td>2 veces al día</td><td><span class="app-pill">Ajuste stock</span></td></tr>
+</tbody></table></div>
+</section>
+<div class="app-card mt-4 text-center"><h3 class="h6">Resumen nutricional sincronizado con bodega</h3><p class="muted mb-0">Al conectar la base de datos, los consumos diarios podrán descontar las existencias automáticamente.</p></div>
+</main>
+<footer class="bg-white border-top p-3 small muted">TERRABOVINO · Maqueta académica · 2026</footer>
+</div></div>
+</body></html>

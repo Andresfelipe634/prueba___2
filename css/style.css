@@ -1,0 +1,332 @@
+:root {
+  --tb-bg: #f4f6f3;
+  --tb-surface: #ffffff;
+  --tb-sidebar-bg: #172b22;
+  --tb-sidebar-hover: #213d30;
+  --tb-sidebar-active: #2a543f;
+  --tb-sidebar-text: #dce7e1;
+  --tb-sidebar-muted: #95afa2;
+  --tb-brand: #1f6f4a;
+  --tb-brand-dark: #155236;
+  --tb-brand-soft: #e6f3ec;
+  --tb-text: #1c2420;
+  --tb-muted: #5c6b63;
+  --tb-border: #dfe6e1;
+  --tb-radius: 12px;
+  --tb-shadow: 0 2px 10px rgba(20, 41, 31, 0.05);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--tb-bg);
+  color: var(--tb-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.muted {
+  color: var(--tb-muted) !important;
+}
+
+.text-brand {
+  color: var(--tb-brand) !important;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+}
+
+/* Estructura principal de escritorio */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  width: 276px;
+  flex-shrink: 0;
+  background-color: var(--tb-sidebar-bg);
+  color: var(--tb-sidebar-text);
+  padding: 1.25rem 1rem 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-y: auto;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.app-sidebar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  display: flex !important;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: var(--tb-brand);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* Grupos desplegables en navegación */
+.app-sidebar details,
+.app-mobile-menu details details {
+  margin-bottom: 0.35rem;
+  border-radius: 8px;
+}
+
+.app-sidebar summary,
+.app-mobile-menu nav details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--tb-sidebar-text);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.app-sidebar summary::-webkit-details-marker,
+.app-mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.app-sidebar summary:hover {
+  background-color: var(--tb-sidebar-hover);
+}
+
+.app-sidebar details[open] > summary {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin-bottom: 0.2rem;
+}
+
+.app-sidebar details a,
+.app-mobile-menu nav details a {
+  display: block;
+  padding: 0.38rem 0.65rem 0.38rem 1.85rem;
+  margin: 0.1rem 0;
+  border-radius: 6px;
+  color: var(--tb-sidebar-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.app-sidebar details a:hover,
+.app-mobile-menu nav details a:hover {
+  background-color: var(--tb-sidebar-hover);
+  color: #ffffff;
+}
+
+.app-sidebar details a[aria-current="page"],
+.app-mobile-menu nav details a[aria-current="page"] {
+  background-color: var(--tb-sidebar-active);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Menú móvil (< 992px) */
+.app-mobile-menu {
+  display: none;
+  background-color: var(--tb-sidebar-bg);
+  color: var(--tb-sidebar-text);
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-mobile-menu > details > summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.app-mobile-menu nav {
+  margin-top: 0.75rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Área principal y barra superior */
+.app-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-topbar {
+  background-color: var(--tb-surface);
+  border-bottom: 1px solid var(--tb-border);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.app-content {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.app-page-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+/* Tarjetas, KPIs, insignias y tablas */
+.app-card {
+  background-color: var(--tb-surface);
+  border: 1px solid var(--tb-border);
+  border-radius: var(--tb-radius);
+  padding: 1.25rem;
+  box-shadow: var(--tb-shadow);
+  height: 100%;
+}
+
+section.app-card {
+  height: auto;
+}
+
+.app-kpi {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--tb-text);
+  line-height: 1.2;
+  margin: 0.25rem 0;
+}
+
+.app-pill {
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background-color: var(--tb-brand-soft);
+  color: var(--tb-brand-dark);
+}
+
+.app-field-note {
+  font-size: 0.82rem;
+  color: var(--tb-muted);
+}
+
+.app-table th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--tb-muted);
+  border-bottom-width: 1px;
+  white-space: nowrap;
+}
+
+.app-table td {
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+.btn-success {
+  background-color: var(--tb-brand);
+  border-color: var(--tb-brand);
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: var(--tb-brand-dark);
+  border-color: var(--tb-brand-dark);
+}
+
+.btn-outline-success {
+  color: var(--tb-brand);
+  border-color: var(--tb-brand);
+}
+
+.btn-outline-success:hover,
+.btn-outline-success:focus {
+  background-color: var(--tb-brand);
+  border-color: var(--tb-brand);
+  color: #ffffff;
+}
+
+/* Adaptación responsiva */
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    display: none;
+  }
+
+  .app-mobile-menu {
+    display: block;
+  }
+
+  .app-topbar {
+    position: static;
+  }
+
+  .app-content {
+    padding: 1rem;
+  }
+}
+/* Estilos de impresión y exportación a PDF */
+@media print {
+  .app-sidebar,
+  .app-mobile-menu,
+  .app-topbar,
+  .app-page-heading .btn,
+  .app-field-note,
+  #tb-toast-container,
+  footer {
+    display: none !important;
+  }
+
+  body,
+  .app-layout,
+  .app-main,
+  .app-content {
+    background-color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .app-card {
+    box-shadow: none !important;
+    border: 1px solid #cbd5cf !important;
+    break-inside: avoid;
+    margin-bottom: 1rem !important;
+  }
+
+  .app-table th,
+  .app-table td {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  a[href]::after {
+    content: none !important;
+  }
+}

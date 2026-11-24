@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es"><head>
+<!-- Vista: Registro de auditoría. Bitácora cronológica de eventos del sistema en TERRABOVINO. -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Registro de auditoría en TERRABOVINO, bitácora cronológica de accesos, cambios críticos y eventos del sistema por usuario y módulo.">
+<title>Registro de auditoría | TERRABOVINO</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css"></head>
+<body><div class="app-mobile-menu"><details><summary>TERRABOVINO · Abrir navegación</summary><nav aria-label="Navegación móvil"><details ><summary>▦ &nbsp;Paneles</summary><a href="../paneles/dashboard-ganadero.html" >Dashboard del ganadero</a><a href="../paneles/dashboard-veterinario.html" >Dashboard del veterinario</a><a href="../paneles/dashboard-trabajador.html" >Dashboard del trabajador</a><a href="../paneles/dashboard-administrador.html" >Dashboard del administrador</a></details><details ><summary>◈ &nbsp;Aprender</summary><a href="../aprender/introduccion-ganaderia.html" >Introducción a la ganadería</a><a href="../aprender/razas-bovinas.html" >Razas bovinas</a><a href="../aprender/enrazamiento.html" >Enrazamiento</a><a href="../aprender/alimentacion-bovina.html" >Alimentación bovina</a><a href="../aprender/insumos-ganaderos.html" >Insumos ganaderos</a><a href="../aprender/vitaminas.html" >Vitaminas</a><a href="../aprender/enfermedades.html" >Enfermedades</a><a href="../aprender/manejo-ganadero.html" >Manejo ganadero</a></details><details ><summary>♧ &nbsp;Mi ganado</summary><a href="../mi-ganado/listado-bovinos.html" >Listado de bovinos</a><a href="../mi-ganado/registrar-bovino.html" >Registrar bovino</a><a href="../mi-ganado/ficha-individual.html" >Ficha individual</a><a href="../mi-ganado/editar-bovino.html" >Editar información del bovino</a><a href="../mi-ganado/registro-pesajes.html" >Registro de pesajes</a><a href="../mi-ganado/historial-pesajes.html" >Historial de pesajes</a><a href="../mi-ganado/seguimiento-crecimiento.html" >Seguimiento del crecimiento</a><a href="../mi-ganado/gestion-lotes.html" >Gestión de lotes</a><a href="../mi-ganado/movimientos-ganado.html" >Movimientos del ganado</a><a href="../mi-ganado/historial-movimientos.html" >Historial de movimientos</a><a href="../mi-ganado/registro-mortalidad.html" >Registro de mortalidad</a><a href="../mi-ganado/registro-destete.html" >Registro de destete</a></details><details ><summary>▤ &nbsp;Potreros</summary><a href="../potreros/listado-potreros.html" >Listado de potreros</a><a href="../potreros/registrar-potrero.html" >Registrar potrero</a><a href="../potreros/detalles-potrero.html" >Detalles del potrero</a><a href="../potreros/editar-potrero.html" >Editar potrero</a><a href="../potreros/ocupacion-potreros.html" >Ocupación de potreros</a><a href="../potreros/rotacion-potreros.html" >Rotación de potreros</a><a href="../potreros/historial-rotaciones.html" >Historial de rotaciones</a></details><details ><summary>✚ &nbsp;Sanidad</summary><a href="../sanidad/control-sanitario.html" >Control sanitario</a><a href="../sanidad/registro-enfermedades.html" >Registro de enfermedades</a><a href="../sanidad/vacunacion.html" >Vacunación</a><a href="../sanidad/tratamientos-medicos.html" >Tratamientos médicos</a><a href="../sanidad/aplicacion-vitaminas.html" >Aplicación de vitaminas</a><a href="../sanidad/desparasitaciones.html" >Desparasitaciones</a><a href="../sanidad/controles-veterinarios.html" >Controles veterinarios</a><a href="../sanidad/analisis-laboratorio.html" >Análisis de laboratorio</a><a href="../sanidad/cuarentena.html" >Cuarentena</a><a href="../sanidad/certificados-sanitarios.html" >Certificados sanitarios</a><a href="../sanidad/historial-sanitario.html" >Historial sanitario</a><a href="../sanidad/estadisticas-sanitarias.html" >Estadísticas sanitarias</a></details><details ><summary>◉ &nbsp;Alimentación e insumos</summary><a href="../alimentacion-insumos/gestion-alimentacion.html" >Gestión de alimentación</a><a href="../alimentacion-insumos/registro-alimentacion.html" >Registro de alimentación</a><a href="../alimentacion-insumos/alimentacion-lote.html" >Alimentación por lote</a><a href="../alimentacion-insumos/consumo-agua.html" >Consumo de agua</a><a href="../alimentacion-insumos/listado-insumos.html" >Listado de insumos</a><a href="../alimentacion-insumos/registrar-insumo.html" >Registrar insumo</a><a href="../alimentacion-insumos/inventario.html" >Inventario</a><a href="../alimentacion-insumos/medicamentos.html" >Medicamentos</a><a href="../alimentacion-insumos/vitaminas.html" >Vitaminas</a><a href="../alimentacion-insumos/alimentos.html" >Alimentos</a><a href="../alimentacion-insumos/alertas-inventario.html" >Alertas de inventario</a><a href="../alimentacion-insumos/control-vencimientos.html" >Control de vencimientos</a></details><details ><summary>▥ &nbsp;Producción</summary><a href="../produccion/produccion-leche.html" >Producción de leche</a><a href="../produccion/registro-diario-leche.html" >Registro diario de leche</a><a href="../produccion/produccion-carne.html" >Producción de carne</a><a href="../produccion/registro-otros-productos.html" >Registro de otros productos</a><a href="../produccion/historial-produccion.html" >Historial de producción</a><a href="../produccion/estadisticas-produccion.html" >Estadísticas de producción</a></details><details ><summary>♡ &nbsp;Reproducción</summary><a href="../reproduccion/control-reproductivo.html" >Control reproductivo</a><a href="../reproduccion/registro-montas.html" >Registro de montas</a><a href="../reproduccion/inseminaciones.html" >Inseminaciones</a><a href="../reproduccion/gestaciones.html" >Gestaciones</a><a href="../reproduccion/control-fertilidad.html" >Control de fertilidad</a><a href="../reproduccion/registro-partos.html" >Registro de partos</a><a href="../reproduccion/registro-nacimientos.html" >Registro de nacimientos</a><a href="../reproduccion/historial-reproductivo.html" >Historial reproductivo</a><a href="../reproduccion/calendario-reproductivo.html" >Calendario reproductivo</a></details><details ><summary>◇ &nbsp;Servicios ganaderos</summary><a href="../servicios/catalogo-servicios.html" >Catálogo de servicios</a><a href="../servicios/prestamo-reproductores.html" >Préstamo de reproductores</a><a href="../servicios/solicitar-servicio.html" >Solicitar servicio</a><a href="../servicios/mis-servicios.html" >Mis servicios</a><a href="../servicios/historial-servicios.html" >Historial de servicios</a></details><details ><summary>$ &nbsp;Comercial</summary><a href="../comercial/compras-ganado.html" >Compras de ganado</a><a href="../comercial/ventas-ganado.html" >Ventas de ganado</a><a href="../comercial/compras-insumos.html" >Compras de insumos</a><a href="../comercial/ventas-productos.html" >Ventas de productos</a><a href="../comercial/gestion-clientes.html" >Gestión de clientes</a><a href="../comercial/gestion-proveedores.html" >Gestión de proveedores</a><a href="../comercial/registro-ingresos.html" >Registro de ingresos</a><a href="../comercial/registro-gastos.html" >Registro de gastos</a><a href="../comercial/costos-veterinarios.html" >Costos veterinarios</a><a href="../comercial/historial-transacciones.html" >Historial de transacciones</a></details><details ><summary>▦ &nbsp;Calendario ganadero</summary><a href="../calendario/calendario-general.html" >Calendario general</a><a href="../calendario/programar-actividades.html" >Programar actividades</a><a href="../calendario/programar-vacunaciones.html" >Programar vacunaciones</a><a href="../calendario/programar-controles-veterinarios.html" >Programar controles veterinarios</a><a href="../calendario/programar-inseminaciones.html" >Programar inseminaciones</a><a href="../calendario/programar-partos.html" >Programar partos</a><a href="../calendario/recordatorios-actividades.html" >Recordatorios de actividades</a></details><details ><summary>☑ &nbsp;Actividades de la finca</summary><a href="../actividades/listado-actividades.html" >Listado de actividades</a><a href="../actividades/registrar-actividad.html" >Registrar actividad</a><a href="../actividades/asignar-actividades.html" >Asignar actividades a trabajadores</a><a href="../actividades/actividades-pendientes.html" >Actividades pendientes</a><a href="../actividades/actividades-completadas.html" >Actividades completadas</a><a href="../actividades/historial-actividades.html" >Historial de actividades</a></details><details ><summary>▤ &nbsp;Reportes</summary><a href="../reportes/reporte-general-ganado.html" >Reporte general de ganado</a><a href="../reportes/reporte-crecimiento.html" >Reporte de crecimiento</a><a href="../reportes/reporte-produccion.html" >Reporte de producción</a><a href="../reportes/reporte-sanitario.html" >Reporte sanitario</a><a href="../reportes/reporte-reproductivo.html" >Reporte reproductivo</a><a href="../reportes/reporte-potreros.html" >Reporte de potreros</a><a href="../reportes/reporte-comercial.html" >Reporte comercial</a><a href="../reportes/estadisticas-generales.html" >Estadísticas generales</a></details><details open><summary>⚙ &nbsp;Administración</summary><a href="../administracion/gestion-usuarios.html" >Gestión de usuarios</a><a href="../administracion/registrar-usuario.html" >Registrar usuario</a><a href="../administracion/editar-usuario.html" >Editar usuario</a><a href="../administracion/gestion-roles.html" >Gestión de roles</a><a href="../administracion/gestion-permisos.html" >Gestión de permisos</a><a href="../administracion/asignacion-permisos.html" >Asignación de permisos</a><a href="../administracion/gestion-fincas.html" >Gestión de fincas</a><a href="../administracion/registro-auditoria.html" aria-current="page">Registro de auditoría</a><a href="../administracion/configuracion-sistema.html" >Configuración del sistema</a></details><details ><summary>☷ &nbsp;Complementarios</summary><a href="../complementarios/centro-notificaciones.html" >Centro de notificaciones</a><a href="../complementarios/gestion-documentos.html" >Gestión de documentos</a><a href="../complementarios/maquinaria-equipos.html" >Maquinaria y equipos</a><a href="../complementarios/mantenimiento-equipos.html" >Mantenimiento de equipos</a><a href="../complementarios/condiciones-climaticas.html" >Condiciones climáticas</a><a href="../complementarios/copias-seguridad.html" >Copias de seguridad</a><a href="../complementarios/sesiones-activas.html" >Gestión de sesiones activas</a><a href="../complementarios/perfil-usuario.html" >Perfil de usuario</a><a href="../complementarios/editar-perfil.html" >Editar perfil</a><a href="../complementarios/cambiar-contrasena.html" >Cambiar contraseña</a></details></nav></details></div>
+<div class="app-layout"><aside class="app-sidebar"><a href="../PagPrincipal.html" class="navbar-brand text-white d-block mb-3"><span class="brand-mark">T</span>TERRABOVINO</a><nav aria-label="Menú lateral"><details ><summary>▦ &nbsp;Paneles</summary><a href="../paneles/dashboard-ganadero.html" >Dashboard del ganadero</a><a href="../paneles/dashboard-veterinario.html" >Dashboard del veterinario</a><a href="../paneles/dashboard-trabajador.html" >Dashboard del trabajador</a><a href="../paneles/dashboard-administrador.html" >Dashboard del administrador</a></details><details ><summary>◈ &nbsp;Aprender</summary><a href="../aprender/introduccion-ganaderia.html" >Introducción a la ganadería</a><a href="../aprender/razas-bovinas.html" >Razas bovinas</a><a href="../aprender/enrazamiento.html" >Enrazamiento</a><a href="../aprender/alimentacion-bovina.html" >Alimentación bovina</a><a href="../aprender/insumos-ganaderos.html" >Insumos ganaderos</a><a href="../aprender/vitaminas.html" >Vitaminas</a><a href="../aprender/enfermedades.html" >Enfermedades</a><a href="../aprender/manejo-ganadero.html" >Manejo ganadero</a></details><details ><summary>♧ &nbsp;Mi ganado</summary><a href="../mi-ganado/listado-bovinos.html" >Listado de bovinos</a><a href="../mi-ganado/registrar-bovino.html" >Registrar bovino</a><a href="../mi-ganado/ficha-individual.html" >Ficha individual</a><a href="../mi-ganado/editar-bovino.html" >Editar información del bovino</a><a href="../mi-ganado/registro-pesajes.html" >Registro de pesajes</a><a href="../mi-ganado/historial-pesajes.html" >Historial de pesajes</a><a href="../mi-ganado/seguimiento-crecimiento.html" >Seguimiento del crecimiento</a><a href="../mi-ganado/gestion-lotes.html" >Gestión de lotes</a><a href="../mi-ganado/movimientos-ganado.html" >Movimientos del ganado</a><a href="../mi-ganado/historial-movimientos.html" >Historial de movimientos</a><a href="../mi-ganado/registro-mortalidad.html" >Registro de mortalidad</a><a href="../mi-ganado/registro-destete.html" >Registro de destete</a></details><details ><summary>▤ &nbsp;Potreros</summary><a href="../potreros/listado-potreros.html" >Listado de potreros</a><a href="../potreros/registrar-potrero.html" >Registrar potrero</a><a href="../potreros/detalles-potrero.html" >Detalles del potrero</a><a href="../potreros/editar-potrero.html" >Editar potrero</a><a href="../potreros/ocupacion-potreros.html" >Ocupación de potreros</a><a href="../potreros/rotacion-potreros.html" >Rotación de potreros</a><a href="../potreros/historial-rotaciones.html" >Historial de rotaciones</a></details><details ><summary>✚ &nbsp;Sanidad</summary><a href="../sanidad/control-sanitario.html" >Control sanitario</a><a href="../sanidad/registro-enfermedades.html" >Registro de enfermedades</a><a href="../sanidad/vacunacion.html" >Vacunación</a><a href="../sanidad/tratamientos-medicos.html" >Tratamientos médicos</a><a href="../sanidad/aplicacion-vitaminas.html" >Aplicación de vitaminas</a><a href="../sanidad/desparasitaciones.html" >Desparasitaciones</a><a href="../sanidad/controles-veterinarios.html" >Controles veterinarios</a><a href="../sanidad/analisis-laboratorio.html" >Análisis de laboratorio</a><a href="../sanidad/cuarentena.html" >Cuarentena</a><a href="../sanidad/certificados-sanitarios.html" >Certificados sanitarios</a><a href="../sanidad/historial-sanitario.html" >Historial sanitario</a><a href="../sanidad/estadisticas-sanitarias.html" >Estadísticas sanitarias</a></details><details ><summary>◉ &nbsp;Alimentación e insumos</summary><a href="../alimentacion-insumos/gestion-alimentacion.html" >Gestión de alimentación</a><a href="../alimentacion-insumos/registro-alimentacion.html" >Registro de alimentación</a><a href="../alimentacion-insumos/alimentacion-lote.html" >Alimentación por lote</a><a href="../alimentacion-insumos/consumo-agua.html" >Consumo de agua</a><a href="../alimentacion-insumos/listado-insumos.html" >Listado de insumos</a><a href="../alimentacion-insumos/registrar-insumo.html" >Registrar insumo</a><a href="../alimentacion-insumos/inventario.html" >Inventario</a><a href="../alimentacion-insumos/medicamentos.html" >Medicamentos</a><a href="../alimentacion-insumos/vitaminas.html" >Vitaminas</a><a href="../alimentacion-insumos/alimentos.html" >Alimentos</a><a href="../alimentacion-insumos/alertas-inventario.html" >Alertas de inventario</a><a href="../alimentacion-insumos/control-vencimientos.html" >Control de vencimientos</a></details><details ><summary>▥ &nbsp;Producción</summary><a href="../produccion/produccion-leche.html" >Producción de leche</a><a href="../produccion/registro-diario-leche.html" >Registro diario de leche</a><a href="../produccion/produccion-carne.html" >Producción de carne</a><a href="../produccion/registro-otros-productos.html" >Registro de otros productos</a><a href="../produccion/historial-produccion.html" >Historial de producción</a><a href="../produccion/estadisticas-produccion.html" >Estadísticas de producción</a></details><details ><summary>♡ &nbsp;Reproducción</summary><a href="../reproduccion/control-reproductivo.html" >Control reproductivo</a><a href="../reproduccion/registro-montas.html" >Registro de montas</a><a href="../reproduccion/inseminaciones.html" >Inseminaciones</a><a href="../reproduccion/gestaciones.html" >Gestaciones</a><a href="../reproduccion/control-fertilidad.html" >Control de fertilidad</a><a href="../reproduccion/registro-partos.html" >Registro de partos</a><a href="../reproduccion/registro-nacimientos.html" >Registro de nacimientos</a><a href="../reproduccion/historial-reproductivo.html" >Historial reproductivo</a><a href="../reproduccion/calendario-reproductivo.html" >Calendario reproductivo</a></details><details ><summary>◇ &nbsp;Servicios ganaderos</summary><a href="../servicios/catalogo-servicios.html" >Catálogo de servicios</a><a href="../servicios/prestamo-reproductores.html" >Préstamo de reproductores</a><a href="../servicios/solicitar-servicio.html" >Solicitar servicio</a><a href="../servicios/mis-servicios.html" >Mis servicios</a><a href="../servicios/historial-servicios.html" >Historial de servicios</a></details><details ><summary>$ &nbsp;Comercial</summary><a href="../comercial/compras-ganado.html" >Compras de ganado</a><a href="../comercial/ventas-ganado.html" >Ventas de ganado</a><a href="../comercial/compras-insumos.html" >Compras de insumos</a><a href="../comercial/ventas-productos.html" >Ventas de productos</a><a href="../comercial/gestion-clientes.html" >Gestión de clientes</a><a href="../comercial/gestion-proveedores.html" >Gestión de proveedores</a><a href="../comercial/registro-ingresos.html" >Registro de ingresos</a><a href="../comercial/registro-gastos.html" >Registro de gastos</a><a href="../comercial/costos-veterinarios.html" >Costos veterinarios</a><a href="../comercial/historial-transacciones.html" >Historial de transacciones</a></details><details ><summary>▦ &nbsp;Calendario ganadero</summary><a href="../calendario/calendario-general.html" >Calendario general</a><a href="../calendario/programar-actividades.html" >Programar actividades</a><a href="../calendario/programar-vacunaciones.html" >Programar vacunaciones</a><a href="../calendario/programar-controles-veterinarios.html" >Programar controles veterinarios</a><a href="../calendario/programar-inseminaciones.html" >Programar inseminaciones</a><a href="../calendario/programar-partos.html" >Programar partos</a><a href="../calendario/recordatorios-actividades.html" >Recordatorios de actividades</a></details><details ><summary>☑ &nbsp;Actividades de la finca</summary><a href="../actividades/listado-actividades.html" >Listado de actividades</a><a href="../actividades/registrar-actividad.html" >Registrar actividad</a><a href="../actividades/asignar-actividades.html" >Asignar actividades a trabajadores</a><a href="../actividades/actividades-pendientes.html" >Actividades pendientes</a><a href="../actividades/actividades-completadas.html" >Actividades completadas</a><a href="../actividades/historial-actividades.html" >Historial de actividades</a></details><details ><summary>▤ &nbsp;Reportes</summary><a href="../reportes/reporte-general-ganado.html" >Reporte general de ganado</a><a href="../reportes/reporte-crecimiento.html" >Reporte de crecimiento</a><a href="../reportes/reporte-produccion.html" >Reporte de producción</a><a href="../reportes/reporte-sanitario.html" >Reporte sanitario</a><a href="../reportes/reporte-reproductivo.html" >Reporte reproductivo</a><a href="../reportes/reporte-potreros.html" >Reporte de potreros</a><a href="../reportes/reporte-comercial.html" >Reporte comercial</a><a href="../reportes/estadisticas-generales.html" >Estadísticas generales</a></details><details open><summary>⚙ &nbsp;Administración</summary><a href="../administracion/gestion-usuarios.html" >Gestión de usuarios</a><a href="../administracion/registrar-usuario.html" >Registrar usuario</a><a href="../administracion/editar-usuario.html" >Editar usuario</a><a href="../administracion/gestion-roles.html" >Gestión de roles</a><a href="../administracion/gestion-permisos.html" >Gestión de permisos</a><a href="../administracion/asignacion-permisos.html" >Asignación de permisos</a><a href="../administracion/gestion-fincas.html" >Gestión de fincas</a><a href="../administracion/registro-auditoria.html" aria-current="page">Registro de auditoría</a><a href="../administracion/configuracion-sistema.html" >Configuración del sistema</a></details><details ><summary>☷ &nbsp;Complementarios</summary><a href="../complementarios/centro-notificaciones.html" >Centro de notificaciones</a><a href="../complementarios/gestion-documentos.html" >Gestión de documentos</a><a href="../complementarios/maquinaria-equipos.html" >Maquinaria y equipos</a><a href="../complementarios/mantenimiento-equipos.html" >Mantenimiento de equipos</a><a href="../complementarios/condiciones-climaticas.html" >Condiciones climáticas</a><a href="../complementarios/copias-seguridad.html" >Copias de seguridad</a><a href="../complementarios/sesiones-activas.html" >Gestión de sesiones activas</a><a href="../complementarios/perfil-usuario.html" >Perfil de usuario</a><a href="../complementarios/editar-perfil.html" >Editar perfil</a><a href="../complementarios/cambiar-contrasena.html" >Cambiar contraseña</a></details></nav></aside>
+<div class="app-main"><header class="app-topbar"><div><span class="small muted">TERRABOVINO / Administración</span><div class="fw-semibold">Finca La Esperanza <span class="small muted fw-normal">· Registro de auditoría</span></div></div><a class="btn btn-outline-success btn-sm" href="../login.html">Salir</a></header>
+<main class="app-content">
+<div class="app-page-heading">
+  <div>
+    <p class="text-brand fw-semibold mb-1">ADMINISTRACIÓN</p>
+    <h1 class="h2 fw-bold mb-1">Registro de auditoría</h1>
+    <p class="muted mb-0">Bitácora cronológica de accesos, cambios críticos y eventos del sistema por usuario, módulo y origen.</p>
+  </div>
+  <div class="d-flex gap-2 flex-wrap">
+    <a class="btn btn-outline-success" href="../complementarios/sesiones-activas.html">Sesiones activas</a>
+    <a class="btn btn-outline-secondary" href="../administracion/configuracion-sistema.html">Configuración</a>
+  </div>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-12 col-sm-6 col-xl-4">
+    <div class="app-card">
+      <div class="muted small">Eventos registrados (mes)</div>
+      <div class="app-kpi">1.284</div>
+      <span class="small text-brand">Accesos, altas, cambios y cierres de sesión</span>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-xl-4">
+    <div class="app-card">
+      <div class="muted small">Cambios críticos auditados</div>
+      <div class="app-kpi">42</div>
+      <span class="small text-brand">Altas de usuarios, cambios de rol y ajustes de permisos</span>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-xl-4">
+    <div class="app-card">
+      <div class="muted small">Eventos de seguridad</div>
+      <div class="app-kpi">3</div>
+      <span class="small text-brand">2 intentos fallidos · 1 sesión expirada por inactividad</span>
+    </div>
+  </div>
+</div>
+
+<section class="app-card mb-4">
+  <h2 class="h5 fw-bold mb-3">Consultar bitácora de auditoría</h2>
+  <form action="#" method="get">
+    <div class="row g-3">
+      <div class="col-md-2">
+        <label class="form-label" for="rau-desde">Desde fecha</label>
+        <input id="rau-desde" class="form-control" type="date" value="2026-11-01">
+      </div>
+      <div class="col-md-2">
+        <label class="form-label" for="rau-hasta">Hasta fecha</label>
+        <input id="rau-hasta" class="form-control" type="date" value="2026-11-20">
+      </div>
+      <div class="col-md-3">
+        <label class="form-label" for="rau-tipo">Tipo de evento</label>
+        <select id="rau-tipo" class="form-select">
+          <option selected>Todos los tipos</option>
+          <option>Inicio de sesión</option>
+          <option>Cierre de sesión</option>
+          <option>Alta / modificación de usuario</option>
+          <option>Cambio de permisos o roles</option>
+          <option>Cambio crítico en configuración</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label class="form-label" for="rau-usuario">Usuario</label>
+        <select id="rau-usuario" class="form-select">
+          <option selected>Todos</option>
+          <option>Ricardo Beltrán</option>
+          <option>Dra. Camila Rojas</option>
+          <option>Juan Pérez</option>
+          <option>Carlos Ruiz</option>
+          <option>Miguel Torres</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label" for="rau-modulo">Módulo</label>
+        <select id="rau-modulo" class="form-select">
+          <option selected>Todos los módulos</option>
+          <option>Autenticación</option>
+          <option>Administración</option>
+          <option>Sanidad</option>
+          <option>Producción</option>
+          <option>Comercial</option>
+        </select>
+      </div>
+    </div>
+    <div class="d-flex gap-2 mt-3 flex-wrap">
+      <button class="btn btn-success btn-sm" type="button">Consultar bitácora (demostración)</button>
+      <a class="btn btn-outline-secondary btn-sm" href="../complementarios/copias-seguridad.html">Copias de seguridad</a>
+    </div>
+    <p class="app-field-note mt-2 mb-0">Consulta visual de demostración: aún no filtra ni exporta los eventos reales del sistema.</p>
+  </form>
+</section>
+
+<section class="app-card">
+  <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap mb-3">
+    <h2 class="h5 mb-0">Eventos recientes en la bitácora</h2>
+    <span class="app-pill">Datos ilustrativos</span>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover app-table mb-0">
+      <thead>
+        <tr>
+          <th scope="col">Fecha y hora</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Tipo de evento</th>
+          <th scope="col">Módulo</th>
+          <th scope="col">Detalle</th>
+          <th scope="col">Origen / IP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20/11/2026 · 16:48</td>
+          <td>Miguel Torres</td>
+          <td>Cambio crítico en configuración</td>
+          <td>Administración</td>
+          <td>Ajuste de umbral mínimo de descanso de potrero a 32 días</td>
+          <td>Web · 190.66.10.44</td>
+        </tr>
+        <tr>
+          <td>20/11/2026 · 16:45</td>
+          <td>Juan Pérez</td>
+          <td>Registro de evento operativo</td>
+          <td>Producción</td>
+          <td>Ordeño vespertino registrado · 118 L</td>
+          <td>Móvil · 190.66.10.21</td>
+        </tr>
+        <tr>
+          <td>20/11/2026 · 10:12</td>
+          <td>Miguel Torres</td>
+          <td>Cambio de permisos</td>
+          <td>Administración</td>
+          <td>Ampliación de permisos de registro sanitario a Dra. Camila Rojas</td>
+          <td>Web · 190.66.10.44</td>
+        </tr>
+        <tr>
+          <td>20/11/2026 · 06:20</td>
+          <td>Juan Pérez</td>
+          <td>Inicio de sesión</td>
+          <td>Autenticación</td>
+          <td>Acceso exitoso</td>
+          <td>Móvil · 190.66.10.21</td>
+        </tr>
+        <tr>
+          <td>19/11/2026 · 22:00</td>
+          <td>Sistema</td>
+          <td>Respaldo automático</td>
+          <td>Administración</td>
+          <td>Copia de seguridad diaria ejecutada (12,4 GB)</td>
+          <td>Servidor · 10.0.0.2</td>
+        </tr>
+        <tr>
+          <td>19/11/2026 · 21:55</td>
+          <td>Carlos Ruiz</td>
+          <td>Intento fallido de inicio de sesión</td>
+          <td>Autenticación</td>
+          <td>Contraseña incorrecta (1er intento)</td>
+          <td>Móvil · 190.66.10.18</td>
+        </tr>
+        <tr>
+          <td>19/11/2026 · 15:30</td>
+          <td>Juan Pérez</td>
+          <td>Cierre de sesión</td>
+          <td>Autenticación</td>
+          <td>Cierre manual desde dispositivo móvil</td>
+          <td>Móvil · 190.66.10.21</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</main><footer class="px-4 py-3 border-top small muted">TERRABOVINO · Maqueta académica · 2026</footer></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/app.js"></script>
+</body></html>

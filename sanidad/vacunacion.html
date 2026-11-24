@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Registro y seguimiento de vacunación bovina en TERRABOVINO.">
+
+    <title>Vacunación | TERRABOVINO</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<!-- ===================================== -->
+<!-- MENÚ MÓVIL -->
+<!-- ===================================== -->
+
+<div class="app-mobile-menu">
+
+    <details>
+        <summary>TERRABOVINO · Abrir navegación</summary>
+
+        <nav aria-label="Navegación móvil">
+
+            <details>
+                <summary>▦ Paneles</summary>
+                <a href="../paneles/dashboard-ganadero.html">Dashboard ganadero</a>
+                <a href="../paneles/dashboard-veterinario.html">Dashboard veterinario</a>
+                <a href="../paneles/dashboard-trabajador.html">Dashboard trabajador</a>
+                <a href="../paneles/dashboard-administrador.html">Dashboard administrador</a>
+            </details>
+
+            <details>
+                <summary>◈ Aprender</summary>
+                <a href="../aprender/introduccion-ganaderia.html">Introducción a la ganadería</a>
+                <a href="../aprender/razas-bovinas.html">Razas bovinas</a>
+                <a href="../aprender/enfermedades.html">Enfermedades</a>
+            </details>
+
+            <details>
+                <summary>♧ Mi ganado</summary>
+                <a href="../mi-ganado/listado-bovinos.html">Listado de bovinos</a>
+                <a href="../mi-ganado/registrar-bovino.html">Registrar bovino</a>
+                <a href="../mi-ganado/ficha-individual.html">Ficha individual</a>
+            </details>
+
+            <details>
+                <summary>▤ Potreros</summary>
+                <a href="../potreros/listado-potreros.html">Listado de potreros</a>
+                <a href="../potreros/rotacion-potreros.html">Rotación de potreros</a>
+            </details>
+
+            <details open>
+                <summary>✚ Sanidad</summary>
+                <a href="../sanidad/control-sanitario.html">Control sanitario</a>
+                <a href="../sanidad/registro-enfermedades.html">Registro de enfermedades</a>
+                <a href="../sanidad/vacunacion.html" aria-current="page">Vacunación</a>
+                <a href="../sanidad/tratamientos-medicos.html">Tratamientos médicos</a>
+                <a href="../sanidad/aplicacion-vitaminas.html">Aplicación de vitaminas</a>
+                <a href="../sanidad/desparasitaciones.html">Desparasitaciones</a>
+                <a href="../sanidad/controles-veterinarios.html">Controles veterinarios</a>
+                <a href="../sanidad/analisis-laboratorio.html">Análisis de laboratorio</a>
+                <a href="../sanidad/cuarentena.html">Cuarentena</a>
+                <a href="../sanidad/historial-sanitario.html">Historial sanitario</a>
+                <a href="../sanidad/estadisticas-sanitarias.html">Estadísticas sanitarias</a>
+            </details>
+
+            <details>
+                <summary>◉ Alimentación e insumos</summary>
+                <a href="../alimentacion-insumos/gestion-alimentacion.html">Gestión de alimentación</a>
+                <a href="../alimentacion-insumos/inventario.html">Inventario</a>
+                <a href="../alimentacion-insumos/medicamentos.html">Medicamentos</a>
+                <a href="../alimentacion-insumos/alimentos.html">Alimentos</a>
+            </details>
+
+            <details>
+                <summary>▥ Producción</summary>
+                <a href="../produccion/produccion-leche.html">Producción de leche</a>
+                <a href="../produccion/produccion-carne.html">Producción de carne</a>
+            </details>
+
+            <details>
+                <summary>♡ Reproducción</summary>
+                <a href="../reproduccion/control-reproductivo.html">Control reproductivo</a>
+                <a href="../reproduccion/gestaciones.html">Gestaciones</a>
+                <a href="../reproduccion/registro-partos.html">Registro de partos</a>
+            </details>
+
+            <details>
+                <summary>◇ Servicios ganaderos</summary>
+                <a href="../servicios/catalogo-servicios.html">Catálogo de servicios</a>
+                <a href="../servicios/mis-servicios.html">Mis servicios</a>
+            </details>
+
+            <details>
+                <summary>$ Comercial</summary>
+                <a href="../comercial/compras-ganado.html">Compras de ganado</a>
+                <a href="../comercial/ventas-ganado.html">Ventas de ganado</a>
+                <a href="../comercial/gestion-clientes.html">Gestión de clientes</a>
+            </details>
+
+            <details>
+                <summary>▦ Calendario ganadero</summary>
+                <a href="../calendario/calendario-general.html">Calendario general</a>
+            </details>
+
+            <details>
+                <summary>☑ Actividades de la finca</summary>
+                <a href="../actividades/listado-actividades.html">Listado de actividades</a>
+            </details>
+
+            <details>
+                <summary>▤ Reportes</summary>
+                <a href="../reportes/reporte-sanitario.html">Reporte sanitario</a>
+                <a href="../reportes/estadisticas-generales.html">Estadísticas generales</a>
+            </details>
+
+            <details>
+                <summary>⚙ Administración</summary>
+                <a href="../administracion/gestion-usuarios.html">Gestión de usuarios</a>
+                <a href="../administracion/configuracion-sistema.html">Configuración del sistema</a>
+            </details>
+
+            <details>
+                <summary>☷ Complementarios</summary>
+                <a href="../complementarios/centro-notificaciones.html">Notificaciones</a>
+                <a href="../complementarios/perfil-usuario.html">Perfil de usuario</a>
+            </details>
+
+        </nav>
+    </details>
+
+</div>
+
+
+<!-- ===================================== -->
+<!-- ESTRUCTURA PRINCIPAL -->
+<!-- ===================================== -->
+
+<div class="app-layout">
+
+
+    <!-- MENÚ LATERAL -->
+    <aside class="app-sidebar">
+
+        <a href="../PagPrincipal.html"
+           class="navbar-brand text-white d-block mb-3">
+
+            <span class="brand-mark">T</span>
+            TERRABOVINO
+
+        </a>
+
+        <nav aria-label="Menú principal">
+
+            <details>
+                <summary>▦ Paneles</summary>
+                <a href="../paneles/dashboard-ganadero.html">Dashboard ganadero</a>
+                <a href="../paneles/dashboard-veterinario.html">Dashboard veterinario</a>
+                <a href="../paneles/dashboard-trabajador.html">Dashboard trabajador</a>
+                <a href="../paneles/dashboard-administrador.html">Dashboard administrador</a>
+            </details>
+
+            <details>
+                <summary>◈ Aprender</summary>
+                <a href="../aprender/introduccion-ganaderia.html">Introducción a la ganadería</a>
+                <a href="../aprender/razas-bovinas.html">Razas bovinas</a>
+                <a href="../aprender/enfermedades.html">Enfermedades</a>
+            </details>
+
+            <details>
+                <summary>♧ Mi ganado</summary>
+                <a href="../mi-ganado/listado-bovinos.html">Listado de bovinos</a>
+                <a href="../mi-ganado/registrar-bovino.html">Registrar bovino</a>
+                <a href="../mi-ganado/ficha-individual.html">Ficha individual</a>
+                <a href="../mi-ganado/registro-pesajes.html">Registro de pesajes</a>
+                <a href="../mi-ganado/gestion-lotes.html">Gestión de lotes</a>
+            </details>
+
+            <details>
+                <summary>▤ Potreros</summary>
+                <a href="../potreros/listado-potreros.html">Listado de potreros</a>
+                <a href="../potreros/rotacion-potreros.html">Rotación de potreros</a>
+            </details>
+
+            <details open>
+                <summary>✚ Sanidad</summary>
+                <a href="../sanidad/control-sanitario.html">Control sanitario</a>
+                <a href="../sanidad/registro-enfermedades.html">Registro de enfermedades</a>
+                <a href="../sanidad/vacunacion.html" aria-current="page">Vacunación</a>
+                <a href="../sanidad/tratamientos-medicos.html">Tratamientos médicos</a>
+                <a href="../sanidad/aplicacion-vitaminas.html">Aplicación de vitaminas</a>
+                <a href="../sanidad/desparasitaciones.html">Desparasitaciones</a>
+                <a href="../sanidad/controles-veterinarios.html">Controles veterinarios</a>
+                <a href="../sanidad/analisis-laboratorio.html">Análisis de laboratorio</a>
+                <a href="../sanidad/cuarentena.html">Cuarentena</a>
+                <a href="../sanidad/certificados-sanitarios.html">Certificados sanitarios</a>
+                <a href="../sanidad/historial-sanitario.html">Historial sanitario</a>
+                <a href="../sanidad/estadisticas-sanitarias.html">Estadísticas sanitarias</a>
+            </details>
+
+            <details>
+                <summary>◉ Alimentación e insumos</summary>
+                <a href="../alimentacion-insumos/gestion-alimentacion.html">Gestión de alimentación</a>
+                <a href="../alimentacion-insumos/inventario.html">Inventario</a>
+                <a href="../alimentacion-insumos/medicamentos.html">Medicamentos</a>
+                <a href="../alimentacion-insumos/alimentos.html">Alimentos</a>
+            </details>
+
+            <details>
+                <summary>▥ Producción</summary>
+                <a href="../produccion/produccion-leche.html">Producción de leche</a>
+                <a href="../produccion/produccion-carne.html">Producción de carne</a>
+            </details>
+
+            <details>
+                <summary>♡ Reproducción</summary>
+                <a href="../reproduccion/control-reproductivo.html">Control reproductivo</a>
+                <a href="../reproduccion/gestaciones.html">Gestaciones</a>
+                <a href="../reproduccion/registro-partos.html">Registro de partos</a>
+            </details>
+
+            <details>
+                <summary>◇ Servicios ganaderos</summary>
+                <a href="../servicios/catalogo-servicios.html">Catálogo de servicios</a>
+                <a href="../servicios/mis-servicios.html">Mis servicios</a>
+            </details>
+
+            <details>
+                <summary>$ Comercial</summary>
+                <a href="../comercial/compras-ganado.html">Compras de ganado</a>
+                <a href="../comercial/ventas-ganado.html">Ventas de ganado</a>
+                <a href="../comercial/gestion-clientes.html">Gestión de clientes</a>
+            </details>
+
+            <details>
+                <summary>▦ Calendario ganadero</summary>
+                <a href="../calendario/calendario-general.html">Calendario general</a>
+            </details>
+
+            <details>
+                <summary>☑ Actividades de la finca</summary>
+                <a href="../actividades/listado-actividades.html">Listado de actividades</a>
+            </details>
+
+            <details>
+                <summary>▤ Reportes</summary>
+                <a href="../reportes/reporte-sanitario.html">Reporte sanitario</a>
+                <a href="../reportes/estadisticas-generales.html">Estadísticas generales</a>
+            </details>
+
+            <details>
+                <summary>⚙ Administración</summary>
+                <a href="../administracion/gestion-usuarios.html">Gestión de usuarios</a>
+                <a href="../administracion/configuracion-sistema.html">Configuración del sistema</a>
+            </details>
+
+            <details>
+                <summary>☷ Complementarios</summary>
+                <a href="../complementarios/centro-notificaciones.html">Notificaciones</a>
+                <a href="../complementarios/perfil-usuario.html">Perfil de usuario</a>
+            </details>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ===================================== -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ===================================== -->
+
+    <div class="app-main">
+
+
+        <!-- BARRA SUPERIOR -->
+
+        <header class="app-topbar">
+
+            <div>
+
+                <span class="small muted">
+                    TERRABOVINO / Sanidad
+                </span>
+
+                <div class="fw-semibold">
+                    Finca La Esperanza
+
+                    <span class="small muted fw-normal">
+                        · Vacunación
+                    </span>
+                </div>
+
+            </div>
+
+            <a class="btn btn-outline-success btn-sm"
+               href="../login.html">
+                Salir
+            </a>
+
+        </header>
+
+
+        <!-- CONTENIDO -->
+
+        <main class="app-content">
+
+
+            <!-- ENCABEZADO -->
+
+            <div class="app-page-heading">
+
+                <div>
+
+                    <p class="text-brand fw-semibold mb-1">
+                        SANIDAD
+                    </p>
+
+                    <h1 class="h2 fw-bold mb-1">
+                        Vacunación
+                    </h1>
+
+                    <p class="muted mb-0">
+                        Registro de biológicos aplicados, lotes de vacunas,
+                        dosis y fechas de refuerzo del ganado.
+                    </p>
+
+                </div>
+
+                <a class="btn btn-outline-success"
+                   href="../sanidad/control-sanitario.html">
+                    Inicio del módulo
+                </a>
+
+            </div>
+
+
+            <!-- ===================================== -->
+            <!-- TARJETAS ESTADÍSTICAS -->
+            <!-- ===================================== -->
+
+            <div class="row g-3 mb-4">
+
+                <div class="col-12 col-sm-6 col-xl-4">
+
+                    <div class="app-card">
+
+                        <div class="muted small">
+                            Animales vacunados
+                        </div>
+
+                        <div class="app-kpi">
+                            32
+                        </div>
+
+                        <span class="small text-brand">
+                            Ciclo vigente registrado
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-xl-4">
+
+                    <div class="app-card">
+
+                        <div class="muted small">
+                            Refuerzos próximos
+                        </div>
+
+                        <div class="app-kpi">
+                            5
+                        </div>
+
+                        <span class="small text-brand">
+                            Próximos 15 días
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-xl-4">
+
+                    <div class="app-card">
+
+                        <div class="muted small">
+                            Pendientes de aplicación
+                        </div>
+
+                        <div class="app-kpi">
+                            2
+                        </div>
+
+                        <span class="small text-brand">
+                            Ingreso o lote rezagado
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================================== -->
+            <!-- FORMULARIO DE VACUNACIÓN -->
+            <!-- ===================================== -->
+
+            <section class="app-card mb-4">
+
+                <h2 class="h5 fw-bold mb-3">
+                    Registrar aplicación de vacuna
+                </h2>
+
+                <form id="form-vacunacion">
+
+                    <div class="row g-3">
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label" for="vac-bovino">
+                                Bovino o lote
+                            </label>
+
+                            <input
+                                id="vac-bovino"
+                                name="bovino"
+                                class="form-control"
+                                type="text"
+                                placeholder="Ej. TB001 · Lucero o Lote Producción"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label" for="vac-biologico">
+                                Biológico / Vacuna
+                            </label>
+
+                            <input
+                                id="vac-biologico"
+                                name="biologico"
+                                class="form-control"
+                                type="text"
+                                placeholder="Ej. Fiebre aftosa / Triple bovina"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <label class="form-label" for="vac-lote-prod">
+                                Lote del biológico
+                            </label>
+
+                            <input
+                                id="vac-lote-prod"
+                                name="lote"
+                                class="form-control"
+                                type="text"
+                                placeholder="Ej. LOT-VAC-2026-09"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <label class="form-label" for="vac-dosis">
+                                Dosis aplicada
+                            </label>
+
+                            <input
+                                id="vac-dosis"
+                                name="dosis"
+                                class="form-control"
+                                type="text"
+                                placeholder="Ej. 2 mL SC"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <label class="form-label" for="vac-fecha">
+                                Fecha de aplicación
+                            </label>
+
+                            <input
+                                id="vac-fecha"
+                                name="fecha"
+                                class="form-control"
+                                type="date"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label" for="vac-refuerzo">
+                                Próximo refuerzo
+                            </label>
+
+                            <input
+                                id="vac-refuerzo"
+                                name="refuerzo"
+                                class="form-control"
+                                type="date"
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label" for="vac-responsable">
+                                Veterinario / Aplicador
+                            </label>
+
+                            <input
+                                id="vac-responsable"
+                                name="responsable"
+                                class="form-control"
+                                type="text"
+                                placeholder="Nombre del profesional o encargado"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOTONES -->
+
+                    <div class="d-flex gap-2 mt-4 flex-wrap">
+
+                        <button
+                            class="btn btn-success"
+                            type="submit">
+                            Registrar vacuna (demostración)
+                        </button>
+
+                        <button
+                            class="btn btn-outline-secondary"
+                            type="reset">
+                            Limpiar formulario
+                        </button>
+
+                        <a
+                            class="btn btn-outline-secondary"
+                            href="../sanidad/control-sanitario.html">
+                            Cancelar
+                        </a>
+
+                    </div>
+
+                    <p class="app-field-note mt-3 mb-0">
+                        Este formulario es una demostración.
+                        Los registros no se guardan permanentemente
+                        ni se envían a una base de datos.
+                    </p>
+
+                </form>
+
+            </section>
+
+
+            <!-- ===================================== -->
+            <!-- HISTORIAL DE VACUNACIÓN -->
+            <!-- ===================================== -->
+
+            <section class="app-card">
+
+                <div class="d-flex justify-content-between
+                            align-items-center gap-2 flex-wrap mb-3">
+
+                    <h2 class="h5 mb-0">
+                        Historial reciente de vacunación
+                    </h2>
+
+                    <span class="app-pill">
+                        Datos ilustrativos
+                    </span>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover app-table mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">Bovino / Lote</th>
+                                <th scope="col">Biológico</th>
+                                <th scope="col">Lote vacuna</th>
+                                <th scope="col">Dosis</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Refuerzo</th>
+                                <th scope="col">Responsable</th>
+                                <th scope="col">Estado</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>TB001 · Lucero</td>
+                                <td>Fiebre aftosa</td>
+                                <td>AFT-8841</td>
+                                <td>2 mL</td>
+                                <td>12/11/2026</td>
+                                <td>12/05/2027</td>
+                                <td>Dra. Torres</td>
+
+                                <td>
+                                    <span class="app-pill">
+                                        Aplicada
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>TB002 · Centauro</td>
+                                <td>Carbón sintomático</td>
+                                <td>CRB-3092</td>
+                                <td>5 mL</td>
+                                <td>15/11/2026</td>
+                                <td>15/11/2027</td>
+                                <td>Dr. Ruiz</td>
+
+                                <td>
+                                    <span class="app-pill">
+                                        Programada
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>TB003 · Luna</td>
+                                <td>BRSV / IBR / Leptospira</td>
+                                <td>REP-1120</td>
+                                <td>3 mL</td>
+                                <td>18/11/2026</td>
+                                <td>18/05/2027</td>
+                                <td>Dra. Torres</td>
+
+                                <td>
+                                    <span class="app-pill">
+                                        Aplicada
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ===================================== -->
+            <!-- MENSAJE INFORMATIVO -->
+            <!-- ===================================== -->
+
+            <section class="app-empty mt-4">
+
+                <div class="fs-2">▤</div>
+
+                <h2 class="h6 mt-2">
+                    Sin campañas adicionales programadas
+                </h2>
+
+                <p class="mb-0">
+                    Aquí aparecerán nuevos registros de vacunación
+                    cuando se conecte el sistema con la base de datos.
+                </p>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- ===================================== -->
+        <!-- PIE DE PÁGINA -->
+        <!-- ===================================== -->
+
+        <footer class="px-4 py-3 border-top small muted">
+
+            TERRABOVINO · Maqueta académica · 2026
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================== -->
+<!-- SCRIPTS -->
+<!-- ===================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="../js/app.js"></script>
+
+
+<!-- VALIDACIÓN DEL FORMULARIO DE DEMOSTRACIÓN -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const formulario = document.getElementById("form-vacunacion");
+
+    if (!formulario) {
+        return;
+    }
+
+    formulario.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        if (!formulario.reportValidity()) {
+            return;
+        }
+
+        const fechaAplicacion = document.getElementById("vac-fecha").value;
+        const fechaRefuerzo = document.getElementById("vac-refuerzo").value;
+
+        if (fechaRefuerzo && fechaRefuerzo < fechaAplicacion) {
+            alert("La fecha del refuerzo no puede ser anterior a la fecha de aplicación.");
+            return;
+        }
+
+        alert(
+            "Formulario validado correctamente.\n\n" +
+            "Esta es una demostración: el registro todavía no se guarda en una base de datos."
+        );
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

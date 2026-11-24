@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Registro y seguimiento de aplicaciones vitamínicas y minerales en TERRABOVINO.">
+
+    <title>Aplicación de vitaminas | TERRABOVINO</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos propios -->
+    <style>
+        :root {
+            --verde: #198754;
+            --verde-oscuro: #145c3a;
+            --fondo: #f4f7f5;
+            --texto: #26352c;
+        }
+
+        body {
+            margin: 0;
+            background: var(--fondo);
+            color: var(--texto);
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .app-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .app-sidebar {
+            width: 260px;
+            min-width: 260px;
+            background: #183c2c;
+            color: white;
+            padding: 22px 15px;
+            overflow-y: auto;
+        }
+
+        .brand {
+            display: block;
+            font-size: 21px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .brand-mark {
+            display: inline-flex;
+            width: 34px;
+            height: 34px;
+            align-items: center;
+            justify-content: center;
+            background: #198754;
+            border-radius: 8px;
+            margin-right: 8px;
+        }
+
+        .app-sidebar details {
+            margin-bottom: 8px;
+        }
+
+        .app-sidebar summary {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .app-sidebar summary:hover {
+            background: #28563f;
+        }
+
+        .app-sidebar details a {
+            display: block;
+            color: #dce9df;
+            padding: 7px 12px 7px 25px;
+            font-size: 13px;
+        }
+
+        .app-sidebar details a:hover,
+        .app-sidebar details a[aria-current="page"] {
+            color: white;
+            background: #286344;
+            border-radius: 5px;
+        }
+
+        .app-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .app-topbar {
+            background: white;
+            padding: 17px 25px;
+            border-bottom: 1px solid #e1e9e3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .app-content {
+            padding: 30px;
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .muted {
+            color: #718078;
+        }
+
+        .text-brand {
+            color: var(--verde);
+        }
+
+        .app-page-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .app-card {
+            background: white;
+            border: 1px solid #e5ebe6;
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.035);
+        }
+
+        .app-kpi {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 8px 0;
+            color: var(--verde-oscuro);
+        }
+
+        .app-pill {
+            display: inline-block;
+            background: #e6f4eb;
+            color: #17643b;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .app-field-note {
+            font-size: 13px;
+            color: #718078;
+        }
+
+        .app-empty {
+            text-align: center;
+            background: white;
+            border: 1px dashed #b8c8bc;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .app-table th {
+            background: #f0f5f1;
+            white-space: nowrap;
+            font-size: 13px;
+        }
+
+        .app-table td {
+            vertical-align: middle;
+            font-size: 14px;
+        }
+
+        .app-footer {
+            background: white;
+            border-top: 1px solid #e1e9e3;
+            padding: 18px 25px;
+            color: #718078;
+            font-size: 13px;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: #183c2c;
+            color: white;
+            padding: 12px 18px;
+        }
+
+        .mobile-menu summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: white;
+            padding: 7px 10px;
+        }
+
+        @media (max-width: 900px) {
+            .app-sidebar {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .app-content {
+                padding: 18px;
+            }
+
+            .app-topbar {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .app-card {
+                padding: 16px;
+            }
+
+            .app-page-heading h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVEGACIÓN MÓVIL -->
+<div class="mobile-menu">
+    <details>
+        <summary>TERRABOVINO · Abrir navegación</summary>
+
+        <nav class="mt-3">
+            <a href="../PagPrincipal.html">Inicio</a>
+            <a href="../paneles/dashboard-ganadero.html">Dashboard ganadero</a>
+            <a href="../mi-ganado/listado-bovinos.html">Mi ganado</a>
+            <a href="../potreros/listado-potreros.html">Potreros</a>
+            <a href="../sanidad/control-sanitario.html">Control sanitario</a>
+            <a href="../sanidad/vacunacion.html">Vacunación</a>
+            <a href="../sanidad/tratamientos-medicos.html">Tratamientos médicos</a>
+            <a href="../sanidad/aplicacion-vitaminas.html">Aplicación de vitaminas</a>
+            <a href="../sanidad/desparasitaciones.html">Desparasitaciones</a>
+            <a href="../sanidad/historial-sanitario.html">Historial sanitario</a>
+            <a href="../alimentacion-insumos/inventario.html">Inventario</a>
+            <a href="../produccion/produccion-leche.html">Producción</a>
+            <a href="../reproduccion/control-reproductivo.html">Reproducción</a>
+            <a href="../comercial/compras-ganado.html">Comercial</a>
+            <a href="../calendario/calendario-general.html">Calendario</a>
+            <a href="../reportes/reporte-general-ganado.html">Reportes</a>
+            <a href="../administracion/gestion-usuarios.html">Administración</a>
+        </nav>
+    </details>
+</div>
+
+<div class="app-layout">
+
+    <!-- MENÚ LATERAL -->
+    <aside class="app-sidebar">
+
+        <a href="../PagPrincipal.html" class="brand">
+            <span class="brand-mark">T</span>
+            TERRABOVINO
+        </a>
+
+        <nav>
+
+            <details>
+                <summary>▦ Paneles</summary>
+                <a href="../paneles/dashboard-ganadero.html">Dashboard del ganadero</a>
+                <a href="../paneles/dashboard-veterinario.html">Dashboard del veterinario</a>
+                <a href="../paneles/dashboard-trabajador.html">Dashboard del trabajador</a>
+                <a href="../paneles/dashboard-administrador.html">Dashboard del administrador</a>
+            </details>
+
+            <details>
+                <summary>◈ Aprender</summary>
+                <a href="../aprender/introduccion-ganaderia.html">Introducción a la ganadería</a>
+                <a href="../aprender/razas-bovinas.html">Razas bovinas</a>
+                <a href="../aprender/alimentacion-bovina.html">Alimentación bovina</a>
+                <a href="../aprender/vitaminas.html">Vitaminas</a>
+                <a href="../aprender/enfermedades.html">Enfermedades</a>
+            </details>
+
+            <details>
+                <summary>♧ Mi ganado</summary>
+                <a href="../mi-ganado/listado-bovinos.html">Listado de bovinos</a>
+                <a href="../mi-ganado/registrar-bovino.html">Registrar bovino</a>
+                <a href="../mi-ganado/ficha-individual.html">Ficha individual</a>
+                <a href="../mi-ganado/registro-pesajes.html">Registro de pesajes</a>
+                <a href="../mi-ganado/gestion-lotes.html">Gestión de lotes</a>
+            </details>
+
+            <details>
+                <summary>▤ Potreros</summary>
+                <a href="../potreros/listado-potreros.html">Listado de potreros</a>
+                <a href="../potreros/registrar-potrero.html">Registrar potrero</a>
+                <a href="../potreros/ocupacion-potreros.html">Ocupación de potreros</a>
+                <a href="../potreros/rotacion-potreros.html">Rotación de potreros</a>
+            </details>
+
+            <details open>
+                <summary>✚ Sanidad</summary>
+                <a href="../sanidad/control-sanitario.html">Control sanitario</a>
+                <a href="../sanidad/registro-enfermedades.html">Registro de enfermedades</a>
+                <a href="../sanidad/vacunacion.html">Vacunación</a>
+                <a href="../sanidad/tratamientos-medicos.html">Tratamientos médicos</a>
+                <a href="../sanidad/aplicacion-vitaminas.html" aria-current="page">Aplicación de vitaminas</a>
+                <a href="../sanidad/desparasitaciones.html">Desparasitaciones</a>
+                <a href="../sanidad/controles-veterinarios.html">Controles veterinarios</a>
+                <a href="../sanidad/analisis-laboratorio.html">Análisis de laboratorio</a>
+                <a href="../sanidad/cuarentena.html">Cuarentena</a>
+                <a href="../sanidad/certificados-sanitarios.html">Certificados sanitarios</a>
+                <a href="../sanidad/historial-sanitario.html">Historial sanitario</a>
+                <a href="../sanidad/estadisticas-sanitarias.html">Estadísticas sanitarias</a>
+            </details>
+
+            <details>
+                <summary>◉ Alimentación e insumos</summary>
+                <a href="../alimentacion-insumos/gestion-alimentacion.html">Gestión de alimentación</a>
+                <a href="../alimentacion-insumos/registro-alimentacion.html">Registro de alimentación</a>
+                <a href="../alimentacion-insumos/inventario.html">Inventario</a>
+                <a href="../alimentacion-insumos/medicamentos.html">Medicamentos</a>
+                <a href="../alimentacion-insumos/vitaminas.html">Vitaminas</a>
+                <a href="../alimentacion-insumos/alimentos.html">Alimentos</a>
+            </details>
+
+            <details>
+                <summary>▥ Producción</summary>
+                <a href="../produccion/produccion-leche.html">Producción de leche</a>
+                <a href="../produccion/produccion-carne.html">Producción de carne</a>
+                <a href="../produccion/historial-produccion.html">Historial de producción</a>
+            </details>
+
+            <details>
+                <summary>♡ Reproducción</summary>
+                <a href="../reproduccion/control-reproductivo.html">Control reproductivo</a>
+                <a href="../reproduccion/inseminaciones.html">Inseminaciones</a>
+                <a href="../reproduccion/gestaciones.html">Gestaciones</a>
+                <a href="../reproduccion/registro-partos.html">Registro de partos</a>
+            </details>
+
+            <details>
+                <summary>◇ Servicios ganaderos</summary>
+                <a href="../servicios/catalogo-servicios.html">Catálogo de servicios</a>
+                <a href="../servicios/solicitar-servicio.html">Solicitar servicio</a>
+                <a href="../servicios/mis-servicios.html">Mis servicios</a>
+            </details>
+
+            <details>
+                <summary>$ Comercial</summary>
+                <a href="../comercial/compras-ganado.html">Compras de ganado</a>
+                <a href="../comercial/ventas-ganado.html">Ventas de ganado</a>
+                <a href="../comercial/gestion-clientes.html">Gestión de clientes</a>
+                <a href="../comercial/gestion-proveedores.html">Gestión de proveedores</a>
+            </details>
+
+            <details>
+                <summary>▦ Calendario ganadero</summary>
+                <a href="../calendario/calendario-general.html">Calendario general</a>
+                <a href="../calendario/programar-actividades.html">Programar actividades</a>
+                <a href="../calendario/recordatorios-actividades.html">Recordatorios</a>
+            </details>
+
+            <details>
+                <summary>☑ Actividades</summary>
+                <a href="../actividades/listado-actividades.html">Listado de actividades</a>
+                <a href="../actividades/registrar-actividad.html">Registrar actividad</a>
+                <a href="../actividades/actividades-pendientes.html">Actividades pendientes</a>
+            </details>
+
+            <details>
+                <summary>▤ Reportes</summary>
+                <a href="../reportes/reporte-general-ganado.html">Reporte general</a>
+                <a href="../reportes/reporte-sanitario.html">Reporte sanitario</a>
+                <a href="../reportes/reporte-produccion.html">Reporte de producción</a>
+            </details>
+
+            <details>
+                <summary>⚙ Administración</summary>
+                <a href="../administracion/gestion-usuarios.html">Gestión de usuarios</a>
+                <a href="../administracion/gestion-roles.html">Gestión de roles</a>
+                <a href="../administracion/gestion-fincas.html">Gestión de fincas</a>
+            </details>
+
+            <details>
+                <summary>☷ Complementarios</summary>
+                <a href="../complementarios/centro-notificaciones.html">Notificaciones</a>
+                <a href="../complementarios/gestion-documentos.html">Gestión de documentos</a>
+                <a href="../complementarios/perfil-usuario.html">Perfil de usuario</a>
+                <a href="../complementarios/configuracion-sistema.html">Configuración</a>
+            </details>
+
+        </nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="app-main">
+
+        <!-- ENCABEZADO -->
+        <header class="app-topbar">
+            <div>
+                <span class="small muted">TERRABOVINO / Sanidad</span>
+
+                <div class="fw-semibold">
+                    Finca La Esperanza
+                    <span class="small muted fw-normal">
+                        · Aplicación de vitaminas
+                    </span>
+                </div>
+            </div>
+
+            <a class="btn btn-outline-success btn-sm" href="../login.html">
+                Salir
+            </a>
+        </header>
+
+        <main class="app-content">
+
+            <!-- TÍTULO -->
+            <div class="app-page-heading">
+
+                <div>
+                    <p class="text-brand fw-semibold mb-1">SANIDAD</p>
+
+                    <h1 class="h2 fw-bold mb-1">
+                        Aplicación de vitaminas
+                    </h1>
+
+                    <p class="muted mb-0">
+                        Suplementación vitamínica y mineral por bovino o lote
+                        en etapas críticas de crecimiento, lactancia y reproducción.
+                    </p>
+                </div>
+
+                <a class="btn btn-outline-success"
+                   href="../sanidad/control-sanitario.html">
+                    Inicio del módulo
+                </a>
+
+            </div>
+
+            <!-- ESTADÍSTICAS -->
+            <div class="row g-3 mb-4">
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="app-card">
+                        <div class="muted small">Aplicaciones del mes</div>
+                        <div class="app-kpi">27</div>
+                        <span class="small text-brand">
+                            Individuales y por lote
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="app-card">
+                        <div class="muted small">Refuerzos programados</div>
+                        <div class="app-kpi">4</div>
+                        <span class="small text-brand">
+                            Lote pre-servicio y destete
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="app-card">
+                        <div class="muted small">Complejos en uso</div>
+                        <div class="app-kpi">3</div>
+                        <span class="small text-brand">
+                            AD3E, Complejo B y Fósforo
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FORMULARIO -->
+            <section class="app-card mb-4">
+
+                <h2 class="h5 fw-bold mb-3">
+                    Registrar aplicación de vitaminas
+                </h2>
+
+                <form id="form-vitaminas">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="vit-bovino">
+                                Bovino o lote
+                            </label>
+
+                            <input
+                                id="vit-bovino"
+                                name="bovino"
+                                class="form-control"
+                                type="text"
+                                placeholder="Ej. TB003 · Luna o Lote Levante"
+                                required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="vit-producto">
+                                Complejo vitamínico / mineral
+                            </label>
+
+                            <input
+                                id="vit-producto"
+                                name="producto"
+                                class="form-control"
+                                type="text"
+                                placeholder="Ej. Vitamina AD3E + Fósforo orgánico"
+                                required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label" for="vit-dosis">
+                                Dosis y vía
+                            </label>
+
+                            <input
+                                id="vit-dosis"
+                                name="dosis"
+                                class="form-control"
+                                type="text"
+                                placeholder="Ej. 10 mL IM"
+                                required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label" for="vit-motivo">
+                                Etapa / Motivo
+                            </label>
+
+                            <select
+                                id="vit-motivo"
+                                name="motivo"
+                                class="form-select"
+                                required>
+
+                                <option value="" selected disabled>
+                                    Seleccionar...
+                                </option>
+
+                                <option>Pre-servicio / Reproducción</option>
+                                <option>Postparto / Lactancia</option>
+                                <option>Destete y crecimiento</option>
+                                <option>Recuperación clínica</option>
+
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label" for="vit-fecha">
+                                Fecha de aplicación
+                            </label>
+
+                            <input
+                                id="vit-fecha"
+                                name="fecha"
+                                class="form-control"
+                                type="date"
+                                required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="vit-proxima">
+                                Próxima aplicación
+                            </label>
+
+                            <input
+                                id="vit-proxima"
+                                name="proxima"
+                                class="form-control"
+                                type="date">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="vit-responsable">
+                                Responsable
+                            </label>
+
+                            <input
+                                id="vit-responsable"
+                                name="responsable"
+                                class="form-control"
+                                type="text"
+                                placeholder="Veterinario o encargado"
+                                required>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex gap-2 mt-4 flex-wrap">
+
+                        <button class="btn btn-success" type="submit">
+                            Guardar aplicación
+                        </button>
+
+                        <button class="btn btn-outline-secondary" type="reset">
+                            Limpiar formulario
+                        </button>
+
+                        <a class="btn btn-outline-secondary"
+                           href="../sanidad/control-sanitario.html">
+                            Cancelar
+                        </a>
+
+                    </div>
+
+                    <p class="app-field-note mt-3 mb-0">
+                        Formulario de demostración: aún no persiste en base de datos.
+                    </p>
+
+                </form>
+
+            </section>
+
+            <!-- APLICACIONES RECIENTES -->
+            <section class="app-card">
+
+                <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap mb-3">
+
+                    <h2 class="h5 mb-0">
+                        Aplicaciones recientes
+                    </h2>
+
+                    <span class="app-pill">
+                        Datos ilustrativos
+                    </span>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover app-table mb-0">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Bovino / Lote</th>
+                                <th scope="col">Complejo vitamínico</th>
+                                <th scope="col">Dosis / Vía</th>
+                                <th scope="col">Motivo</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Próxima dosis</th>
+                                <th scope="col">Estado</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>TB001 · Lucero</td>
+                                <td>Vitamina AD3E</td>
+                                <td>10 mL IM</td>
+                                <td>Postparto / Lactancia</td>
+                                <td>10/11/2026</td>
+                                <td>10/01/2027</td>
+                                <td>
+                                    <span class="app-pill">Aplicada</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>TB002 · Centauro</td>
+                                <td>Complejo B + Selenio</td>
+                                <td>15 mL IM</td>
+                                <td>Pre-servicio</td>
+                                <td>14/11/2026</td>
+                                <td>14/02/2027</td>
+                                <td>
+                                    <span class="app-pill">Aplicada</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>TB003 · Luna</td>
+                                <td>Fósforo + Vitamina B12</td>
+                                <td>8 mL SC</td>
+                                <td>Destete y crecimiento</td>
+                                <td>19/11/2026</td>
+                                <td>19/01/2027</td>
+                                <td>
+                                    <span class="app-pill">Programada</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- REGISTROS PENDIENTES -->
+            <section class="app-empty mt-4">
+
+                <div class="fs-2">▤</div>
+
+                <h2 class="h6 mt-2">
+                    Sin suplementaciones adicionales pendientes
+                </h2>
+
+                <p class="mb-0">
+                    Los nuevos registros vitamínicos se mostrarán aquí
+                    al conectar los datos reales.
+                </p>
+
+            </section>
+
+        </main>
+
+        <!-- PIE DE PÁGINA -->
+        <footer class="app-footer">
+            TERRABOVINO · Maqueta académica · 2026
+        </footer>
+
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const formulario = document.getElementById("form-vitaminas");
+
+    if (!formulario) {
+        return;
+    }
+
+    formulario.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        if (!formulario.checkValidity()) {
+            formulario.reportValidity();
+            return;
+        }
+
+        const fecha = document.getElementById("vit-fecha").value;
+        const proxima = document.getElementById("vit-proxima").value;
+
+        if (proxima && proxima < fecha) {
+            alert("La próxima aplicación no puede ser anterior a la fecha actual.");
+            return;
+        }
+
+        alert("¡Aplicación de vitaminas registrada correctamente! (Demostración)");
+
+        formulario.reset();
+
+    });
+
+});
+</script>
+
+</body>
+</html>
